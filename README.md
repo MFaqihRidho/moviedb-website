@@ -1,2 +1,2 @@
 # moviedb-website
-Building website using mealdb
+Building website using moviedb API
