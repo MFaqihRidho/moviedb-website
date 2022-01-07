@@ -1,19 +1,10 @@
-import Layout from "../../Components/layout";
+import React from "react";
+import Navbar from "../../Components/navbar";
 
-function Home() {
+export default function Home() {
     return (
-        <Layout>
-            <div className="max-w-xl">
-                <header>Lorem ipsum dolor sit amet consectetur.</header>
-                <section>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Enim suscipit harum ratione officiis quas, est sed quaerat
-                    natus asperiores adipisci rem distinctio doloremque,
-                    assumenda id. Fugit facere autem amet ex.
-                </section>
-                <footer>Lorem ipsum dolor sit.</footer>
-            </div>
-        </Layout>
+        <div className="min-h-screen bg-black font-poppins">
+            <Navbar></Navbar>
+        </div>
     );
 }
-export default Home;
