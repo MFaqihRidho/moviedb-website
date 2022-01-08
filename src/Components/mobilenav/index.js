@@ -9,9 +9,7 @@ export default function MobileNav() {
         setShowDropDown(!showDropDown);
     };
 
-    useEffect(() => {
-        console.log(showDropDown);
-    }, [showDropDown]);
+    useEffect(() => {}, [showDropDown]);
     return (
         <div className="order-last md:hidden">
             <button className="" onClick={toggleDropDown}>

@@ -9,7 +9,7 @@ export default function Navbar() {
                 <h3 className="hidden sm:block order-1 text-2xl font-semibold">
                     Movie Finder
                 </h3>
-                <div className="hidden gap-5 sm:order-last  row md:order-3 md:flex">
+                <div className="hidden gap-5 sm:order-last row md:order-3 md:flex">
                     <Navlink>Home</Navlink>
                     <Navlink>Trending</Navlink>
                 </div>
