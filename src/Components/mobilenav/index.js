@@ -31,12 +31,12 @@ export default function MobileNav() {
                 </svg>
             </button>
             {showDropDown ? (
-                <div className="fixed right-11 flex flex-col transition-all opacity-100 duration-300 items-center bg-three rounded px-1.5 py-3 gap-2">
-                    <NavLink>Home</NavLink>
+                <div className="fixed right-11 flex flex-col opacity-100 transition-all duration-300 items-center bg-three rounded px-1.5 py-3 gap-2 z-10">
+                    <NavLink className="text-black">Home</NavLink>
                     <NavLink>Trending</NavLink>
                 </div>
             ) : (
-                <div className="fixed right-11 flex flex-col transition-all opacity-0 duration-300 items-center bg-three rounded px-0 py-0 gap-2">
+                <div className="fixed right-11 flex flex-col transition-all opacity-0 duration-300 items-center bg-three rounded px-0 py-0 gap-2 z-10">
                     <NavLink>Home</NavLink>
                     <NavLink>Trending</NavLink>
                 </div>
