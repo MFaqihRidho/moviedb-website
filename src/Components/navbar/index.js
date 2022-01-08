@@ -5,10 +5,11 @@ import MobileNav from "../mobilenav";
 export default function Navbar() {
     return (
         <nav className="w-full h-20 antialiased text-white shadow bg-one">
-            <div className="container flex items-center justify-between h-full mx-auto">
-                <h3 className="order-1 text-2xl font-semibold">Movie Finder</h3>
-                <MobileNav></MobileNav>
-                <div className="hidden gap-5 sm:order-last row md:order-3 md:flex">
+            <div className="container flex items-center justify-between h-full px-6 lg:px-0 mx-auto">
+                <h3 className="hidden sm:block order-1 text-2xl font-semibold">
+                    Movie Finder
+                </h3>
+                <div className="hidden gap-5 sm:order-last  row md:order-3 md:flex">
                     <Navlink>Home</Navlink>
                     <Navlink>Trending</Navlink>
                 </div>
@@ -27,7 +28,7 @@ export default function Navbar() {
                     </div>
                     <input
                         type="text"
-                        className="z-0 py-2 bg-gray-500 rounded-lg shadow sm:px-5 md:px-10 focus:outline-none focus:ring focus:ring-sky-900/60"
+                        className="z-0 py-2 bg-gray-500 rounded-lg shadow px-5 md:px-10 focus:outline-none focus:ring focus:ring-sky-900/60"
                         placeholder="Search Movie"
                     />
                     <div class="absolute top-1.5 right-2">
@@ -36,6 +37,7 @@ export default function Navbar() {
                         </button>
                     </div>
                 </div>
+                <MobileNav></MobileNav>
             </div>
         </nav>
     );
