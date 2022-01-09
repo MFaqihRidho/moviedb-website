@@ -11,7 +11,7 @@ module.exports = {
                 poppins: ["Poppins", "sans-serif"],
             },
             maxWidth: {
-                readable: "20ch",
+                readable: "14ch",
             },
         },
     },

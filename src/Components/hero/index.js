@@ -25,7 +25,7 @@ export default function Hero() {
                     Trending 🔥
                 </p>
             </div>
-            <div className="relative px-12 py-16 sm:py-36 lg:py-80 h-96">
+            <div className="relative px-12 top-16 sm:top-36 lg:top-80">
                 <div>
                     <h1 className="z-20 py-3 text-xl font-semibold text-white sm:text-3xl md:text-4xl lg:text-6xl">
                         {data.title ? data.title : data.name}
