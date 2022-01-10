@@ -17,15 +17,15 @@ export default function Hero() {
         <div className="">
             <div>
                 <img
-                    className="absolute max-h-screen min-w-full opacity-60 -z-1"
+                    className=" max-h-screen min-w-full opacity-60 -z-1"
                     src={`https://image.tmdb.org/t/p/w500/${data.backdrop_path}`}
                     alt=""
                 />
-                <p className="absolute py-3 pl-2 text-sm font-semibold text-white rounded-br-full md:text-3xl pr-7 bg-two">
+                <p className="absolute top-20 py-1.5 pl-1 sm:py-3 sm:pl-2 text-sm font-semibold text-white rounded-br-full md:text-3xl pr-7 bg-two">
                     Trending 🔥
                 </p>
             </div>
-            <div className="relative px-12 top-16 sm:top-36 lg:top-80">
+            <div className="relative px-12 -mt-40 mb-20 sm:-mt-80 sm:mb-36">
                 <div>
                     <h1 className="z-20 py-3 text-xl font-semibold text-white sm:text-3xl md:text-4xl lg:text-6xl">
                         {data.title ? data.title : data.name}
