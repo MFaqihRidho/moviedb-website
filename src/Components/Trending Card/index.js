@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import Card from "../atoms/card";
 import CardLoading from "../atoms/card loading";
 import { apiKey } from "../../config";
@@ -6,6 +7,7 @@ import { apiKey } from "../../config";
 export default function TrendingMovies() {
     const [data, setData] = useState([]);
     const [loading, setloading] = useState(false);
+    let navigate = useNavigate();
     const fetchData = async () => {
         setloading(true);
         try {
@@ -44,10 +46,11 @@ export default function TrendingMovies() {
                     {data.map((cardData) => (
                         <Card
                             id={cardData.id}
-                            onClick={(e) => console.log(e.target.id)}
+                            onClick={(e) => navigate(`/movie/${e.target.id}`)}
                             title={cardData.title}
                             year={cardData.release_date}
                             image={cardData.poster_path}
+                            vote={cardData.vote_average}
                         ></Card>
                     ))}
                 </div>
