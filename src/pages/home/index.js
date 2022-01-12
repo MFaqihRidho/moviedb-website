@@ -1,6 +1,7 @@
 import React from "react";
 import Navbar from "../../Components/navbar";
 import Hero from "../../Components/hero";
+import Footer from "../../Components/footer";
 import TrendingMovies from "../../Components/Trending Card";
 
 export default function Home() {
@@ -9,6 +10,7 @@ export default function Home() {
             <Navbar></Navbar>
             <Hero></Hero>
             <TrendingMovies></TrendingMovies>
+            <Footer></Footer>
         </div>
     );
 }

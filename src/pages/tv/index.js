@@ -6,7 +6,7 @@ import { useParams } from "react-router-dom";
 import { apiKey } from "../../config";
 import MovieLoading from "../../Components/atoms/movie details loading";
 
-export default function Movie() {
+export default function Tv() {
     const [data, setData] = useState([]);
     const [video, setVideo] = useState([]);
     const [loading, setloading] = useState(false);
@@ -16,7 +16,7 @@ export default function Movie() {
         setloading(true);
         try {
             fetch(
-                `https://api.themoviedb.org/3/movie/${params.id}?api_key=${apiKey}`
+                `https://api.themoviedb.org/3/tv/${params.id}?api_key=${apiKey}`
             )
                 .then((response) => response.json())
                 .then((results) => {
@@ -32,7 +32,7 @@ export default function Movie() {
         setloading(true);
         try {
             fetch(
-                `https://api.themoviedb.org/3/movie/${params.id}/videos?api_key=${apiKey}&language=en-US`
+                `https://api.themoviedb.org/3/tv/${params.id}/videos?api_key=${apiKey}&language=en-US`
             )
                 .then((response) => response.json())
                 .then((results) => {
@@ -47,6 +47,8 @@ export default function Movie() {
     useEffect(() => {
         fetchData();
         fetchTrailer();
+        console.log(data.genres);
+        console.log(data.genres);
     }, []);
 
     return (
@@ -56,12 +58,13 @@ export default function Movie() {
                 <MovieLoading></MovieLoading>
             ) : (
                 <MovieDetail
-                    title={data.title}
+                    title={data.name}
                     backdrop={data.backdrop_path}
                     poster={data.poster_path}
                     vote={data.vote_average}
                     overview={data.overview}
                     video={video}
+                    genres={data.genres}
                 ></MovieDetail>
             )}
         </div>

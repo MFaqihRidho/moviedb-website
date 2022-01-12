@@ -1,6 +1,11 @@
 import React from "react";
+import { useEffect, useState } from "react/cjs/react.development";
 
 export default function MovieDetail(props) {
+    const [genres, setGenres] = useState();
+    useEffect(() => {
+        setGenres(props.genres);
+    }, []);
     return (
         <div>
             <div>
@@ -14,12 +19,52 @@ export default function MovieDetail(props) {
                 <img
                     src={`https://image.tmdb.org/t/p/w500/${props.poster}`}
                     alt=""
-                    className="rounded md:h-52"
+                    className="rounded md:h-56"
                 />
                 <div className="px-0 py-3 md:py-0 md:px-10">
-                    <h1 className="mb-5 text-2xl font-semibold text-white md:text-4xl">
+                    <h1 className="mb-2 text-2xl font-semibold text-white md:text-4xl">
                         {props.title}
                     </h1>
+                    <div className="flex flex-row mb-2">
+                        <div className="flex gap-3">
+                            {genres
+                                ? genres.map((g) =>
+                                      g.id === 18 ? (
+                                          <a
+                                              href="#"
+                                              className="text-black rounded px-2 bg-green-500 hover:bg-green-600"
+                                          >
+                                              Drama
+                                          </a>
+                                      ) : null
+                                  )
+                                : null}
+                            {genres
+                                ? genres.map((g) =>
+                                      g.id === 35 ? (
+                                          <a
+                                              href="#"
+                                              className="text-black rounded px-2 bg-yellow-500 hover:bg-yellow-600"
+                                          >
+                                              Comedy
+                                          </a>
+                                      ) : null
+                                  )
+                                : null}
+                            {genres
+                                ? genres.map((g) =>
+                                      g.id === 28 ? (
+                                          <a
+                                              href="#"
+                                              className="text-black rounded px-2 bg-red-500 hover:bg-red-600"
+                                          >
+                                              Action
+                                          </a>
+                                      ) : null
+                                  )
+                                : null}
+                        </div>
+                    </div>
                     <div className="flex flex-row">
                         <svg
                             xmlns="http://www.w3.org/2000/svg"
@@ -38,7 +83,7 @@ export default function MovieDetail(props) {
                                     ? `https://www.youtube.com/watch?v=${props.video.key}`
                                     : `https://www.youtube.com/results?search_query=${props.title}`
                             }
-                            className="px-3 py-1 font-medium text-black bg-yellow-400 hover:bg-yellow-600 transition duration-300 rounded ml-7"
+                            className="px-3 py-1 font-medium text-black transition duration-300 bg-yellow-400 rounded hover:bg-yellow-600 ml-7"
                             target="_blank"
                             rel="noreferrer"
                         >
