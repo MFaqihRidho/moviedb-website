@@ -1,17 +1,47 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
+import { useState } from "react";
 import Navlink from "../atoms/navlink";
 import MobileNav from "../mobilenav";
 
 export default function Navbar() {
+    let navigate = useNavigate();
+    const [data, setData] = useState("");
+
+    const changeHandle = (e) => {
+        setData(e.target.value);
+        e.target.addEventListener("keypress", (e) => {
+            if (e.keyCode === 13) {
+                document.getElementById("search").click();
+            }
+        });
+    };
+
+    const home = () => {
+        navigate("/");
+    };
+
+    const search = () => {
+        if (data !== "") {
+            navigate(`/search/${data}`);
+            setData("");
+        }
+    };
+
+    const trending = () => {
+        navigate("/#trending");
+        document.getElementById("trending").scrollIntoView();
+    };
+
     return (
         <nav className="w-full h-20 antialiased text-white shadow bg-one">
-            <div className="container flex items-center justify-between h-full px-6 lg:px-0 mx-auto">
-                <h3 className="hidden sm:block order-1 text-2xl font-semibold">
+            <div className="container flex items-center justify-between h-full px-6 mx-auto lg:px-0">
+                <h3 className="order-1 hidden text-2xl font-semibold sm:block">
                     Movie Finder
                 </h3>
                 <div className="hidden gap-5 sm:order-last row md:order-3 md:flex">
-                    <Navlink>Home</Navlink>
-                    <Navlink>Trending</Navlink>
+                    <Navlink onClick={home}>Home</Navlink>
+                    <Navlink onClick={trending}>Trending</Navlink>
                 </div>
                 <div className="relative order-3">
                     <div class="hidden md:block absolute top-2.5 left-3">
@@ -28,11 +58,17 @@ export default function Navbar() {
                     </div>
                     <input
                         type="text"
-                        className="z-0 py-2 bg-gray-500 rounded-lg shadow px-5 md:px-10 focus:outline-none focus:ring focus:ring-sky-900/60"
+                        className="z-0 px-5 py-2 bg-gray-500 rounded-lg shadow md:px-10 focus:outline-none focus:ring focus:ring-sky-900/60"
                         placeholder="Search Movie"
+                        onChange={(e) => changeHandle(e)}
+                        value={data}
                     />
                     <div class="absolute top-1.5 right-2">
-                        <button class="px-2 py-0.5 text-white rounded-lg bg-three hover:bg-two focus:ring focus:ring-sky-900/60">
+                        <button
+                            onClick={search}
+                            id="search"
+                            class="px-2 py-0.5 transition duration-300 text-white rounded-lg bg-three hover:bg-two focus:ring focus:ring-sky-900/60"
+                        >
                             Search
                         </button>
                     </div>

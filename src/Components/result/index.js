@@ -1,18 +1,22 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
+import { apiKey } from "../../config";
+import { useParams } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
+import { useEffect, useState } from "react/cjs/react.development";
 import Card from "../atoms/card";
 import CardLoading from "../atoms/card loading";
-import { apiKey } from "../../config";
 
-export default function TrendingMovies() {
+export default function Result() {
     const [data, setData] = useState([]);
     const [loading, setloading] = useState(false);
+    let params = useParams();
     let navigate = useNavigate();
+
     const fetchData = async () => {
         setloading(true);
         try {
             fetch(
-                `https://api.themoviedb.org/3/trending/movie/day?api_key=${apiKey}`
+                `https://api.themoviedb.org/3/search/multi?api_key=${apiKey}&language=en-US&query=${params.keyword}&page=1&include_adult=false`
             )
                 .then((response) => response.json())
                 .then((results) => {
@@ -26,15 +30,12 @@ export default function TrendingMovies() {
 
     useEffect(() => {
         fetchData();
-    }, []);
+        console.log(params.keyword);
+    }, [params.keyword]);
+
     return (
-        <div
-            id="trending"
-            className="px-5 py-6 sm:py-36 md:px-10 lg:px-14 md:py-8"
-        >
-            <h1 className="px-3 mb-3 text-2xl font-semibold text-white lg:px-1 md:text-5xl sm:mb-5 md:mb-8">
-                Trending Movies
-            </h1>
+        <div className="px-5 py-6 text-white sm:py-14 md:px-10 lg:px-14 md:py-8">
+            <h1 className="text-4xl font-semibold mb-7">Results</h1>
             {loading ? (
                 <div className="grid grid-cols-3 gap-6 sm:grid-cols-3 lg:grid-cols-5 xl:grid-cols-6 justify-items-center sm:gap-10 md:gap-12 lg:gap-14 xl:gap-y-9">
                     <CardLoading></CardLoading>
@@ -50,8 +51,16 @@ export default function TrendingMovies() {
                         <Card
                             id={cardData.id}
                             onClick={(e) => navigate(`/movie/${e.target.id}`)}
-                            title={cardData.title}
-                            year={cardData.release_date}
+                            title={
+                                cardData.title ? cardData.title : cardData.name
+                            }
+                            year={
+                                cardData.release_date
+                                    ? cardData.release_date
+                                    : cardData.first_air_date
+                                    ? cardData.first_air_date
+                                    : "unknown"
+                            }
                             image={cardData.poster_path}
                             vote={cardData.vote_average}
                         ></Card>
