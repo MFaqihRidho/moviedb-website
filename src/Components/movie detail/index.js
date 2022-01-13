@@ -5,7 +5,7 @@ export default function MovieDetail(props) {
     const [genres, setGenres] = useState();
     useEffect(() => {
         setGenres(props.genres);
-    }, []);
+    });
     return (
         <div>
             <div>
@@ -22,48 +22,105 @@ export default function MovieDetail(props) {
                     className="rounded md:h-56"
                 />
                 <div className="px-0 py-3 md:py-0 md:px-10">
-                    <h1 className="mb-2 text-2xl font-semibold text-white md:text-4xl">
+                    <h1 className="mb-3 text-2xl font-semibold text-white md:text-4xl">
                         {props.title}
                     </h1>
-                    <div className="flex flex-row mb-2">
-                        <div className="flex gap-3">
-                            {genres
-                                ? genres.map((g) =>
-                                      g.id === 18 ? (
-                                          <a
-                                              href="#"
-                                              className="text-black rounded px-2 bg-green-500 hover:bg-green-600"
-                                          >
-                                              Drama
-                                          </a>
-                                      ) : null
-                                  )
-                                : null}
-                            {genres
-                                ? genres.map((g) =>
-                                      g.id === 35 ? (
-                                          <a
-                                              href="#"
-                                              className="text-black rounded px-2 bg-yellow-500 hover:bg-yellow-600"
-                                          >
-                                              Comedy
-                                          </a>
-                                      ) : null
-                                  )
-                                : null}
-                            {genres
-                                ? genres.map((g) =>
-                                      g.id === 28 ? (
-                                          <a
-                                              href="#"
-                                              className="text-black rounded px-2 bg-red-500 hover:bg-red-600"
-                                          >
-                                              Action
-                                          </a>
-                                      ) : null
-                                  )
-                                : null}
-                        </div>
+                    <div className="grid grid-cols-2 md:flex md:grid-cols-5 align-middle text-center mb-4 gap-3">
+                        {props.genres.includes(28) ? (
+                            <p className="text-black px-2 font-medium transition duration-300 bg-red-500 rounded hover:bg-red-600">
+                                Action
+                            </p>
+                        ) : null}
+                        {props.genres.includes(12) ? (
+                            <p className="text-black px-2 font-medium transition duration-300 bg-teal-400 rounded hover:bg-teal-600">
+                                Adventure
+                            </p>
+                        ) : null}
+                        {props.genres.includes(16) ? (
+                            <p className="text-black px-2 font-medium transition duration-300 bg-blue-400 rounded hover:bg-blue-600">
+                                Animation
+                            </p>
+                        ) : null}
+                        {props.genres.includes(80) ? (
+                            <p className="text-black px-2 font-medium transition duration-300 bg-red-600 rounded hover:bg-red-800">
+                                Crime
+                            </p>
+                        ) : null}
+                        {props.genres.includes(35) ? (
+                            <p className="text-black px-2 font-medium transition duration-300 bg-yellow-400 rounded hover:bg-yellow-600">
+                                Comedy
+                            </p>
+                        ) : null}
+                        {props.genres.includes(18) ? (
+                            <p className="text-black px-2 font-medium transition duration-300 bg-green-400 rounded hover:bg-green-600">
+                                Drama
+                            </p>
+                        ) : null}
+                        {props.genres.includes(99) ? (
+                            <p className="text-black px-2 font-medium transition duration-300 bg-white rounded hover:bg-gray-400">
+                                Documentary
+                            </p>
+                        ) : null}
+                        {props.genres.includes(10751) ? (
+                            <p className="text-black px-2 font-medium transition duration-300 bg-orange-400 rounded hover:bg-orange-600">
+                                Family
+                            </p>
+                        ) : null}
+                        {props.genres.includes(14) ? (
+                            <p className="text-black px-2 font-medium transition duration-300 bg-lime-400 rounded hover:bg-lime-600">
+                                Fantasy
+                            </p>
+                        ) : null}
+                        {props.genres.includes(36) ? (
+                            <p className="text-black px-2 font-medium transition duration-300 bg-amber-400 rounded hover:bg-amber-600">
+                                History
+                            </p>
+                        ) : null}
+                        {props.genres.includes(27) ? (
+                            <p className="text-black px-2 font-medium transition duration-300 bg-red-700 rounded hover:bg-red-900">
+                                Horror
+                            </p>
+                        ) : null}
+                        {props.genres.includes(10402) ? (
+                            <p className="text-black px-2 font-medium transition duration-300 bg-indigo-400 rounded hover:bg-indigo-600">
+                                Music
+                            </p>
+                        ) : null}
+                        {props.genres.includes(9648) ? (
+                            <p className="text-black px-2 font-medium transition duration-300 bg-gray-600 rounded hover:bg-gray-800">
+                                Mystery
+                            </p>
+                        ) : null}
+                        {props.genres.includes(10749) ? (
+                            <p className="text-black px-2 font-medium transition duration-300 bg-pink-400 rounded hover:bg-pink-600">
+                                Mystery
+                            </p>
+                        ) : null}
+                        {props.genres.includes(878) ? (
+                            <p className="text-black px-2 font-medium transition duration-300 bg-emerald-400 rounded hover:bg-emerald-600">
+                                Science Fiction
+                            </p>
+                        ) : null}
+                        {props.genres.includes(10770) ? (
+                            <p className="text-black px-2 font-medium transition duration-300 bg-white rounded hover:bg-gray-400">
+                                Science Fiction
+                            </p>
+                        ) : null}
+                        {props.genres.includes(53) ? (
+                            <p className="text-black px-2 font-medium transition duration-300 bg-red-500 rounded hover:bg-red-700">
+                                Thriller
+                            </p>
+                        ) : null}
+                        {props.genres.includes(10752) ? (
+                            <p className="text-black px-2 font-medium transition duration-300 bg-gray-600 rounded hover:bg-gray-800">
+                                Thriller
+                            </p>
+                        ) : null}
+                        {props.genres.includes(37) ? (
+                            <p className="text-black px-2 font-medium transition duration-300 bg-yellow-400 rounded hover:bg-yellow-600">
+                                Thriller
+                            </p>
+                        ) : null}
                     </div>
                     <div className="flex flex-row">
                         <svg

@@ -9,6 +9,7 @@ import MovieLoading from "../../Components/atoms/movie details loading";
 export default function Movie() {
     const [data, setData] = useState([]);
     const [video, setVideo] = useState([]);
+    const [genres, setGenres] = useState([]);
     const [loading, setloading] = useState(false);
     let params = useParams();
 
@@ -21,6 +22,7 @@ export default function Movie() {
                 .then((response) => response.json())
                 .then((results) => {
                     setData(results);
+                    setGenres(results.genres.map((g) => g.id));
                     setloading(false);
                 });
         } catch (e) {
@@ -62,6 +64,7 @@ export default function Movie() {
                     vote={data.vote_average}
                     overview={data.overview}
                     video={video}
+                    genres={genres}
                 ></MovieDetail>
             )}
         </div>

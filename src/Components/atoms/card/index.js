@@ -29,7 +29,13 @@ export default function Card(props) {
                 <div className="flex">
                     <p
                         id={props.id}
-                        className="px-1 mr-1 text-xs text-white bg-yellow-600 rounded sm:text-sm sm:mr-2"
+                        className={`px-1 mr-1 text-xs text-white ${
+                            props.vote > 7
+                                ? "bg-green-500"
+                                : props.vote >= 6
+                                ? "bg-yellow-500"
+                                : "bg-red-500"
+                        } rounded sm:text-sm sm:mr-2`}
                     >
                         {props.vote}
                     </p>

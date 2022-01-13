@@ -9,6 +9,7 @@ import MovieLoading from "../../Components/atoms/movie details loading";
 export default function Tv() {
     const [data, setData] = useState([]);
     const [video, setVideo] = useState([]);
+    const [genres, setGenres] = useState([]);
     const [loading, setloading] = useState(false);
     let params = useParams();
 
@@ -21,6 +22,7 @@ export default function Tv() {
                 .then((response) => response.json())
                 .then((results) => {
                     setData(results);
+                    setGenres(results.genres.map((g) => g.id));
                     setloading(false);
                 });
         } catch (e) {
@@ -47,8 +49,6 @@ export default function Tv() {
     useEffect(() => {
         fetchData();
         fetchTrailer();
-        console.log(data.genres);
-        console.log(data.genres);
     }, []);
 
     return (
@@ -64,7 +64,7 @@ export default function Tv() {
                     vote={data.vote_average}
                     overview={data.overview}
                     video={video}
-                    genres={data.genres}
+                    genres={genres}
                 ></MovieDetail>
             )}
         </div>
