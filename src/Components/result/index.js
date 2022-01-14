@@ -47,7 +47,7 @@ export default function Result() {
         };
         fetchDataMovie();
         fetchDataTv();
-    }, [params.keyword, dataMovie]);
+    }, [params.keyword]);
 
     return (
         <div className="min-h-screen px-5 py-6 text-white sm:py-14 md:px-10 lg:px-14 md:py-8">
