@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
-import MovieDetail from "../../Components/movie detail";
+import MovieDetail from "../../Components/detail";
 import Navbar from "../../Components/navbar";
-import Footer from "../../Components/footer";
 import { useParams } from "react-router-dom";
 import { apiKey } from "../../config";
 import MovieLoading from "../../Components/atoms/movie details loading";

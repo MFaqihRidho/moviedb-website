@@ -22,10 +22,15 @@ export default function MovieDetail(props) {
                     className="rounded md:h-56"
                 />
                 <div className="px-0 py-3 md:py-0 md:px-10">
-                    <h1 className="mb-3 text-2xl font-semibold text-white md:text-4xl">
+                    <h1 className="mb-4 md:mb-3 text-2xl font-semibold text-white md:text-4xl">
                         {props.title}
                     </h1>
-                    <div className="grid grid-cols-2 md:flex md:grid-cols-5 align-middle text-center mb-4 gap-3">
+                    <div className="grid grid-cols-2 items-center md:flex md:grid-cols-5 align-middle text-center md:mb-4 mb-8 gap-3">
+                        {props.genres.includes(10759) ? (
+                            <p className="text-black px-2 font-medium transition duration-300 bg-purple-500 rounded hover:bg-purple-600">
+                                Action & Adventure
+                            </p>
+                        ) : null}
                         {props.genres.includes(28) ? (
                             <p className="text-black px-2 font-medium transition duration-300 bg-red-500 rounded hover:bg-red-600">
                                 Action
@@ -81,6 +86,11 @@ export default function MovieDetail(props) {
                                 Horror
                             </p>
                         ) : null}
+                        {props.genres.includes(10762) ? (
+                            <p className="text-black px-2 font-medium transition duration-300 bg-orange-400 rounded hover:bg-orange-600">
+                                Kids
+                            </p>
+                        ) : null}
                         {props.genres.includes(10402) ? (
                             <p className="text-black px-2 font-medium transition duration-300 bg-indigo-400 rounded hover:bg-indigo-600">
                                 Music
@@ -91,9 +101,29 @@ export default function MovieDetail(props) {
                                 Mystery
                             </p>
                         ) : null}
+                        {props.genres.includes(10763) ? (
+                            <p className="text-black px-2 font-medium transition duration-300 bg-gray-600 rounded hover:bg-gray-800">
+                                News
+                            </p>
+                        ) : null}
+                        {props.genres.includes(10764) ? (
+                            <p className="text-black px-2 font-medium transition duration-300 bg-gray-600 rounded hover:bg-gray-800">
+                                Reality
+                            </p>
+                        ) : null}
+                        {props.genres.includes(10765) ? (
+                            <p className="text-black px-2 font-medium transition duration-300 bg-emerald-600 rounded hover:bg-emerald-800">
+                                Sci-Fi & Fantasy
+                            </p>
+                        ) : null}
+                        {props.genres.includes(10766) ? (
+                            <p className="text-black px-2 font-medium transition duration-300 bg-pink-400 rounded hover:bg-pink-600">
+                                Soap
+                            </p>
+                        ) : null}
                         {props.genres.includes(10749) ? (
                             <p className="text-black px-2 font-medium transition duration-300 bg-pink-400 rounded hover:bg-pink-600">
-                                Mystery
+                                Romance
                             </p>
                         ) : null}
                         {props.genres.includes(878) ? (
@@ -103,7 +133,7 @@ export default function MovieDetail(props) {
                         ) : null}
                         {props.genres.includes(10770) ? (
                             <p className="text-black px-2 font-medium transition duration-300 bg-white rounded hover:bg-gray-400">
-                                Science Fiction
+                                TV Movie
                             </p>
                         ) : null}
                         {props.genres.includes(53) ? (
@@ -113,12 +143,22 @@ export default function MovieDetail(props) {
                         ) : null}
                         {props.genres.includes(10752) ? (
                             <p className="text-black px-2 font-medium transition duration-300 bg-gray-600 rounded hover:bg-gray-800">
-                                Thriller
+                                War
+                            </p>
+                        ) : null}
+                        {props.genres.includes(10767) ? (
+                            <p className="text-black px-2 font-medium transition duration-300 bg-yellow-600 rounded hover:bg-yellow-800">
+                                Talk
+                            </p>
+                        ) : null}
+                        {props.genres.includes(10768) ? (
+                            <p className="text-black px-2 font-medium transition duration-300 bg-gray-600 rounded hover:bg-gray-800">
+                                War & Politics
                             </p>
                         ) : null}
                         {props.genres.includes(37) ? (
                             <p className="text-black px-2 font-medium transition duration-300 bg-yellow-400 rounded hover:bg-yellow-600">
-                                Thriller
+                                Western
                             </p>
                         ) : null}
                     </div>

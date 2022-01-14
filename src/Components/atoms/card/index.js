@@ -15,7 +15,7 @@ export default function Card(props) {
                     className="transition duration-300"
                 />
             ) : (
-                <div className="px-10 py-24 text-xl bg-two">
+                <div className="py-7 px-2 md:px-10 md:py-24 md:text-xl bg-two">
                     No Available Images
                 </div>
             )}
