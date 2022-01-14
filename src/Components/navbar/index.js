@@ -10,11 +10,11 @@ export default function Navbar() {
 
     const changeHandle = (e) => {
         setData(e.target.value);
-        e.target.addEventListener("keypress", (e) => {
-            if (e.keyCode === 13) {
-                document.getElementById("search").click();
-            }
-        });
+        // e.target.addEventListener("keypress", (e) => {
+        //     if (e.keyCode === 13) {
+        //         document.getElementById("search").click();
+        //     }
+        // });
     };
 
     const home = () => {
