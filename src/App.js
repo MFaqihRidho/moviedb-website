@@ -1,8 +1,8 @@
 import Home from "./pages/home";
 import Movie from "./pages/movie";
+import Search from "./pages/search";
 import Tv from "./pages/tv";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Result from "./Components/result";
 
 function App() {
     return (
@@ -12,7 +12,7 @@ function App() {
                     <Route path="/" element={<Home />} />
                     <Route path="/movie/:id" element={<Movie />} />
                     <Route path="/tv/:id" element={<Tv />} />
-                    <Route path="/search/:keyword" element={<Result />} />
+                    <Route path="/search/:keyword" element={<Search />} />
                 </Routes>
             </BrowserRouter>
         </div>
