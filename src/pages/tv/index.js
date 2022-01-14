@@ -12,43 +12,42 @@ export default function Tv() {
     const [loading, setloading] = useState(false);
     let params = useParams();
 
-    const fetchData = async () => {
-        setloading(true);
-        try {
-            fetch(
-                `https://api.themoviedb.org/3/tv/${params.id}?api_key=${apiKey}`
-            )
-                .then((response) => response.json())
-                .then((results) => {
-                    setData(results);
-                    setGenres(results.genres.map((g) => g.id));
-                    setloading(false);
-                });
-        } catch (e) {
-            setloading(true);
-        }
-    };
-
-    const fetchTrailer = async () => {
-        setloading(true);
-        try {
-            fetch(
-                `https://api.themoviedb.org/3/tv/${params.id}/videos?api_key=${apiKey}&language=en-US`
-            )
-                .then((response) => response.json())
-                .then((results) => {
-                    setVideo(results.results[0]);
-                    setloading(false);
-                });
-        } catch (e) {
-            setloading(true);
-        }
-    };
-
     useEffect(() => {
+        const fetchData = async () => {
+            setloading(true);
+            try {
+                fetch(
+                    `https://api.themoviedb.org/3/tv/${params.id}?api_key=${apiKey}`
+                )
+                    .then((response) => response.json())
+                    .then((results) => {
+                        setData(results);
+                        setGenres(results.genres.map((g) => g.id));
+                        setloading(false);
+                    });
+            } catch (e) {
+                setloading(true);
+            }
+        };
+
+        const fetchTrailer = async () => {
+            setloading(true);
+            try {
+                fetch(
+                    `https://api.themoviedb.org/3/tv/${params.id}/videos?api_key=${apiKey}&language=en-US`
+                )
+                    .then((response) => response.json())
+                    .then((results) => {
+                        setVideo(results.results[0]);
+                        setloading(false);
+                    });
+            } catch (e) {
+                setloading(true);
+            }
+        };
         fetchData();
         fetchTrailer();
-    }, []);
+    }, [params.id]);
 
     return (
         <div className="min-h-screen bg-black -z-50 font-poppins">

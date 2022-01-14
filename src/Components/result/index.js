@@ -13,46 +13,41 @@ export default function Result() {
     let params = useParams();
     let navigate = useNavigate();
 
-    const fetchDataMovie = async () => {
-        setloading(true);
-        try {
-            fetch(
-                `https://api.themoviedb.org/3/search/movie?api_key=${apiKey}&language=en-US&query=${params.keyword}&page=1&include_adult=false`
-            )
-                .then((response) => response.json())
-                .then((results) => {
-                    setDataMovie(results.results);
-                    setloading(false);
-                });
-        } catch (e) {
-            setloading(true);
-        }
-    };
-
-    const fetchDataTv = async () => {
-        setloading(true);
-        try {
-            fetch(
-                `https://api.themoviedb.org/3/search/tv?api_key=${apiKey}&language=en-US&query=${params.keyword}&page=1&include_adult=false`
-            )
-                .then((response) => response.json())
-                .then((results) => {
-                    setDataTv(results.results);
-                    setloading(false);
-                });
-        } catch (e) {
-            setloading(true);
-        }
-    };
-
     useEffect(() => {
+        const fetchDataMovie = async () => {
+            setloading(true);
+            try {
+                fetch(
+                    `https://api.themoviedb.org/3/search/movie?api_key=${apiKey}&language=en-US&query=${params.keyword}&page=1&include_adult=false`
+                )
+                    .then((response) => response.json())
+                    .then((results) => {
+                        setDataMovie(results.results);
+                        setloading(false);
+                    });
+            } catch (e) {
+                setloading(true);
+            }
+        };
+
+        const fetchDataTv = async () => {
+            setloading(true);
+            try {
+                fetch(
+                    `https://api.themoviedb.org/3/search/tv?api_key=${apiKey}&language=en-US&query=${params.keyword}&page=1&include_adult=false`
+                )
+                    .then((response) => response.json())
+                    .then((results) => {
+                        setDataTv(results.results);
+                        setloading(false);
+                    });
+            } catch (e) {
+                setloading(true);
+            }
+        };
         fetchDataMovie();
         fetchDataTv();
-        console.log(dataMovie);
-        console.log(dataMovie);
-        console.log(dataMovie);
-        console.log(dataMovie);
-    }, [params.keyword]);
+    }, [params.keyword, dataMovie]);
 
     return (
         <div className="min-h-screen px-5 py-6 text-white sm:py-14 md:px-10 lg:px-14 md:py-8">

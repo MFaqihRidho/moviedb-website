@@ -1,11 +1,6 @@
 import React from "react";
-import { useEffect, useState } from "react/cjs/react.development";
 
 export default function MovieDetail(props) {
-    const [genres, setGenres] = useState();
-    useEffect(() => {
-        setGenres(props.genres);
-    });
     return (
         <div>
             <div>
