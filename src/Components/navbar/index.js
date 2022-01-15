@@ -58,16 +58,16 @@ export default function Navbar() {
                     </div>
                     <input
                         type="text"
-                        className="z-0 px-2 w-3/4 sm:w-full py-2 bg-gray-500 rounded-lg shadow md:px-10 focus:outline-none focus:ring focus:ring-sky-900/60"
+                        className="z-0 w-3/4 px-2 py-2 bg-gray-500 rounded-lg shadow md:px-10 focus:outline-none focus:ring focus:ring-sky-900/60"
                         placeholder="Search Movie"
                         onChange={(e) => changeHandle(e)}
                         value={data}
                     />
-                    <div class="absolute top-1.5 right-20 md:right-3">
+                    <div class="absolute top-0 left-eight md:right-3">
                         <button
                             onClick={search}
                             id="search"
-                            class="px-2 py-0.5 transition duration-300 text-white rounded-lg bg-three hover:bg-two focus:ring focus:ring-sky-900/60"
+                            class="px-2 py-2 transition duration-300 text-white rounded-lg bg-three hover:bg-two focus:ring focus:ring-sky-900/60"
                         >
                             Search
                         </button>

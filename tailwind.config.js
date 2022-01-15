@@ -17,6 +17,9 @@ module.exports = {
             height: {
                 100: "29rem",
             },
+            inset: {
+                eight: "80%",
+            },
         },
     },
     plugins: [],
