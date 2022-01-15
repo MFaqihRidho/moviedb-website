@@ -58,7 +58,7 @@ export default function Navbar() {
                     </div>
                     <input
                         type="text"
-                        className="z-0 w-3/4 px-2 py-2 bg-gray-500 rounded-lg shadow md:px-10 focus:outline-none focus:ring focus:ring-sky-900/60"
+                        className="z-0 w-1/2 px-2 py-2 bg-gray-500 rounded-lg shadow sm:w-3/5 lg:w-3/4 md:px-10 focus:outline-none focus:ring focus:ring-sky-900/60"
                         placeholder="Search Movie"
                         onChange={(e) => changeHandle(e)}
                         value={data}
