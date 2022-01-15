@@ -63,7 +63,7 @@ export default function Navbar() {
                         onChange={(e) => changeHandle(e)}
                         value={data}
                     />
-                    <div class="absolute top-0 left-eight md:right-3">
+                    <div class="absolute top-0 left-fiftyfive sm:left-2/3 md:left-2/3 lg:left-eight">
                         <button
                             onClick={search}
                             id="search"

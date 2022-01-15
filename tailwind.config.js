@@ -19,6 +19,7 @@ module.exports = {
             },
             inset: {
                 eight: "80%",
+                fiftyfive: "55%",
             },
         },
     },
