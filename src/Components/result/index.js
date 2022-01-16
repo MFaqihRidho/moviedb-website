@@ -9,6 +9,7 @@ export default function Result() {
     const [dataMovie, setDataMovie] = useState([]);
     const [dataTv, setDataTv] = useState([]);
     const [loading, setloading] = useState(false);
+    const [failed, setFailed] = useState(false);
     let params = useParams();
     let navigate = useNavigate();
 
@@ -21,11 +22,20 @@ export default function Result() {
                 )
                     .then((response) => response.json())
                     .then((results) => {
+                        // if (results.results.length !== 0) {
+                        //     setFailed(false);
+                        // } else {
+                        //     setFailed(true);
+                        //     setloading(false);
+                        // }
                         setDataMovie(results.results);
                         setloading(false);
                     });
             } catch (e) {
                 setloading(true);
+                console.log(e);
+                console.log("failed");
+                failed();
             }
         };
 
@@ -37,15 +47,37 @@ export default function Result() {
                 )
                     .then((response) => response.json())
                     .then((results) => {
+                        // if (results.results.length !== 0) {
+                        //     setFailed(false);
+                        // } else {
+                        //     setloading(false);
+                        //     setFailed(true);
+                        // }
                         setDataTv(results.results);
                         setloading(false);
+                    })
+                    .catch(() => {
+                        console.log("failed");
+                        setloading(true);
                     });
             } catch (e) {
+                console.log("failed");
                 setloading(true);
+                failed();
             }
         };
+
+        // const failed = () => {
+        //     if (dataMovie && dataTv) {
+        //         return;
+        //     } else {
+        //         setDataMovie([{ title: "not found" }]);
+        //     }
+        // };
         fetchDataMovie();
         fetchDataTv();
+        // failed();
+        console.log(dataMovie.length);
     }, [params.keyword]);
 
     return (
@@ -60,6 +92,8 @@ export default function Result() {
                     <CardLoading></CardLoading>
                     <CardLoading></CardLoading>
                 </div>
+            ) : dataMovie.length === 0 && dataTv.length === 0 ? (
+                <h1 className="text-white text-3xl font-normal">Not Found</h1>
             ) : (
                 <div className="grid grid-cols-3 gap-6 sm:grid-cols-3 lg:grid-cols-5 xl:grid-cols-6 justify-items-center sm:gap-10 md:gap-12 lg:gap-14 xl:gap-y-9">
                     {dataMovie.map((cardData) => (

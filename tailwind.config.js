@@ -13,6 +13,7 @@ module.exports = {
             maxWidth: {
                 readable: "14ch",
                 mini: "9ch",
+                superMini: "5ch",
             },
             height: {
                 100: "29rem",

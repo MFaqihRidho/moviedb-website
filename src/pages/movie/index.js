@@ -10,6 +10,7 @@ export default function Movie() {
     const [video, setVideo] = useState([]);
     const [genres, setGenres] = useState([]);
     const [loading, setloading] = useState(false);
+    const [failed, setFailed] = useState(false);
     let params = useParams();
 
     useEffect(() => {
@@ -21,12 +22,17 @@ export default function Movie() {
                 )
                     .then((response) => response.json())
                     .then((results) => {
-                        setData(results);
-                        setGenres(results.genres.map((g) => g.id));
-                        setloading(false);
+                        if (results.success === false) {
+                            setFailed(true);
+                            setloading(false);
+                        } else {
+                            setData(results);
+                            setGenres(results.genres.map((g) => g.id));
+                            setloading(false);
+                        }
                     });
             } catch (e) {
-                setloading(true);
+                setFailed(true);
             }
         };
 
@@ -42,7 +48,7 @@ export default function Movie() {
                         setloading(false);
                     });
             } catch (e) {
-                setloading(true);
+                setFailed(true);
             }
         };
         fetchData();
@@ -54,6 +60,10 @@ export default function Movie() {
             <Navbar></Navbar>
             {loading ? (
                 <MovieLoading></MovieLoading>
+            ) : failed ? (
+                <h1 className="text-white px-10 py-10 text-5xl font-semibold">
+                    Not Found
+                </h1>
             ) : (
                 <MovieDetail
                     title={data.title}

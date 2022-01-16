@@ -12,10 +12,10 @@ export default function Card(props) {
                     src={`https://image.tmdb.org/t/p/w500/${props.image}`}
                     alt={props.title}
                     id={props.id}
-                    className="transition duration-300"
+                    className="transition duration-300 h-36 sm:h-72 md:h-64 lg:h-72 w-full"
                 />
             ) : (
-                <div className="py-7 px-2 md:px-10 md:py-24 md:text-xl bg-two">
+                <div className="py-7 px-2 sm:py-20 md:px-10 md:py-24 md:text-xl bg-two">
                     No Available Images
                 </div>
             )}
@@ -43,7 +43,7 @@ export default function Card(props) {
                     </p>
                     <p
                         id={props.id}
-                        className="px-1 text-xs text-white sm:text-sm"
+                        className="px-1 text-xs max-w-superMini overflow-hidden whitespace-nowrap text-ellipsis text-white sm:text-sm"
                     >
                         {props.year === "unknown"
                             ? "unknown"
