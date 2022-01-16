@@ -20,7 +20,7 @@ export default function MovieDetail(props) {
                     <h1 className="mb-4 md:mb-3 text-2xl font-semibold text-white md:text-4xl">
                         {props.title}
                     </h1>
-                    <div className="grid grid-cols-2 items-center md:flex align-middle text-center md:mb-4 mb-8 gap-3 md:gap-6">
+                    <div className="grid grid-cols-2 items-center md:flex align-middle text-center md:mb-4 mb-8 gap-3 md:gap-0 md:space-x-4">
                         {props.genres.includes(10759) ? (
                             <p className="text-black px-2 font-medium transition duration-300 bg-purple-500 rounded hover:bg-purple-600">
                                 Action & Adventure
