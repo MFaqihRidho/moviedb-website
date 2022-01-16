@@ -1,7 +1,6 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { apiKey } from "../../config";
 import { useNavigate } from "react-router-dom";
-import { useEffect, useState } from "react/cjs/react.development";
 import Card from "../atoms/card";
 import CardLoading from "../atoms/card loading";
 
