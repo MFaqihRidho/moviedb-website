@@ -9,7 +9,6 @@ export default function Result() {
     const [dataMovie, setDataMovie] = useState([]);
     const [dataTv, setDataTv] = useState([]);
     const [loading, setloading] = useState(false);
-    const [failed, setFailed] = useState(false);
     let params = useParams();
     let navigate = useNavigate();
 
@@ -22,20 +21,11 @@ export default function Result() {
                 )
                     .then((response) => response.json())
                     .then((results) => {
-                        // if (results.results.length !== 0) {
-                        //     setFailed(false);
-                        // } else {
-                        //     setFailed(true);
-                        //     setloading(false);
-                        // }
                         setDataMovie(results.results);
                         setloading(false);
                     });
             } catch (e) {
                 setloading(true);
-                console.log(e);
-                console.log("failed");
-                failed();
             }
         };
 
@@ -47,37 +37,19 @@ export default function Result() {
                 )
                     .then((response) => response.json())
                     .then((results) => {
-                        // if (results.results.length !== 0) {
-                        //     setFailed(false);
-                        // } else {
-                        //     setloading(false);
-                        //     setFailed(true);
-                        // }
                         setDataTv(results.results);
                         setloading(false);
                     })
                     .catch(() => {
-                        console.log("failed");
                         setloading(true);
                     });
             } catch (e) {
-                console.log("failed");
                 setloading(true);
-                failed();
             }
         };
 
-        // const failed = () => {
-        //     if (dataMovie && dataTv) {
-        //         return;
-        //     } else {
-        //         setDataMovie([{ title: "not found" }]);
-        //     }
-        // };
         fetchDataMovie();
         fetchDataTv();
-        // failed();
-        console.log(dataMovie.length);
     }, [params.keyword]);
 
     return (
