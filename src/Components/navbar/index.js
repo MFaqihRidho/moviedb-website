@@ -21,12 +21,12 @@ export default function Navbar() {
         navigate("/");
     };
 
-    const search = () => {
-        if (data !== "") {
-            navigate(`/search/${data}`);
-            setData("");
-        }
-    };
+    // const search = () => {
+    //     if (data !== "") {
+    //         navigate(`/search/${data}`);
+    //         setData("");
+    //     }
+    // };
 
     const trending = () => {
         navigate("/#trending");

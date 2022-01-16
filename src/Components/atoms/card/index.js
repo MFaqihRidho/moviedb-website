@@ -39,7 +39,7 @@ export default function Card(props) {
                                 : "bg-gray-700"
                         } rounded sm:text-sm sm:mr-2`}
                     >
-                        {props.vote == 0 ? "NA" : props.vote}
+                        {props.vote === 0 ? "NA" : props.vote}
                     </p>
                     <p
                         id={props.id}
