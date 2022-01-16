@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { apiKey } from "../../config";
+import { useParams } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import Card from "../atoms/card";
 import CardLoading from "../atoms/card loading";
@@ -8,6 +9,7 @@ export default function Result() {
     const [dataMovie, setDataMovie] = useState([]);
     const [dataTv, setDataTv] = useState([]);
     const [loading, setloading] = useState(false);
+    let params = useParams();
     let navigate = useNavigate();
 
     useEffect(() => {
@@ -15,7 +17,7 @@ export default function Result() {
             setloading(true);
             try {
                 fetch(
-                    `https://api.themoviedb.org/3/search/movie?api_key=${apiKey}&language=en-US&query=spiderman&page=1&include_adult=false`
+                    `https://api.themoviedb.org/3/search/movie?api_key=${apiKey}&language=en-US&query=${params.keyword}&page=1&include_adult=false`
                 )
                     .then((response) => response.json())
                     .then((results) => {
@@ -31,7 +33,7 @@ export default function Result() {
             setloading(true);
             try {
                 fetch(
-                    `https://api.themoviedb.org/3/search/tv?api_key=${apiKey}&language=en-US&query=spiderman&page=1&include_adult=false`
+                    `https://api.themoviedb.org/3/search/tv?api_key=${apiKey}&language=en-US&query=${params.keyword}&page=1&include_adult=false`
                 )
                     .then((response) => response.json())
                     .then((results) => {
@@ -44,7 +46,7 @@ export default function Result() {
         };
         fetchDataMovie();
         fetchDataTv();
-    }, []);
+    }, [params.keyword]);
 
     return (
         <div className="min-h-screen px-5 py-6 text-white sm:py-14 md:px-10 lg:px-14 md:py-8">

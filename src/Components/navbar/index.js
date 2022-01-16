@@ -10,23 +10,23 @@ export default function Navbar() {
 
     const changeHandle = (e) => {
         setData(e.target.value);
-        // e.target.addEventListener("keypress", (e) => {
-        //     if (e.keyCode === 13) {
-        //         document.getElementById("search").click();
-        //     }
-        // });
+        e.target.addEventListener("keypress", (e) => {
+            if (e.keyCode === 13) {
+                document.getElementById("search").click();
+            }
+        });
     };
 
     const home = () => {
         navigate("/");
     };
 
-    // const search = () => {
-    //     if (data !== "") {
-    //         navigate(`/search/${data}`);
-    //         setData("");
-    //     }
-    // };
+    const search = () => {
+        if (data !== "") {
+            navigate(`/search/${data}`);
+            setData("");
+        }
+    };
 
     const trending = () => {
         navigate("/#trending");
@@ -65,10 +65,8 @@ export default function Navbar() {
                     />
                     <div class="absolute top-0 left-fiftyfive lg:left-eight">
                         <button
-                            onClick={(e) => {
-                                navigate(`/search/${e.target.id}`);
-                            }}
-                            id="spiderman"
+                            onClick={search}
+                            id="search"
                             class="px-2 py-2 transition duration-300 text-white rounded-lg bg-three hover:bg-two focus:ring focus:ring-sky-900/60"
                         >
                             Search
