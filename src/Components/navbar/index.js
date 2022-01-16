@@ -65,8 +65,10 @@ export default function Navbar() {
                     />
                     <div class="absolute top-0 left-fiftyfive lg:left-eight">
                         <button
-                            onClick={search}
-                            id="search"
+                            onClick={(e) => {
+                                navigate(`/search/${e.target.id}`);
+                            }}
+                            id="spiderman"
                             class="px-2 py-2 transition duration-300 text-white rounded-lg bg-three hover:bg-two focus:ring focus:ring-sky-900/60"
                         >
                             Search
