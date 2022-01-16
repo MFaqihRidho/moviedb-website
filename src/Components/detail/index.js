@@ -6,11 +6,15 @@ export default function MovieDetail(props) {
             <div>
                 <img
                     src={`https://image.tmdb.org/t/p/w500/${props.backdrop}`}
-                    alt=""
+                    alt={props.title}
                     className="object-cover object-top w-full md:h-100 opacity-60 -z-1"
                 />
             </div>
-            <div className="relative flex flex-col items-start px-16 -mt-24 md:items-end md:flex-row">
+            <div
+                className={`relative flex flex-col items-start px-16 ${
+                    props.backdrop ? "-mt-24" : null
+                } md:items-end md:flex-row`}
+            >
                 <img
                     src={`https://image.tmdb.org/t/p/w500/${props.poster}`}
                     alt=""

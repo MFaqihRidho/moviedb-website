@@ -1,12 +1,13 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import NavLink from "../atoms/navlink";
 import { useNavigate } from "react-router-dom";
-import { useState } from "react";
 
 export default function MobileNav() {
+    const menuRef = useRef(null);
+    const [listening, setListening] = useState(false);
     const [showDropDown, setShowDropDown] = useState(false);
-
     let navigate = useNavigate();
+
     const home = () => {
         navigate("/");
         setShowDropDown(!showDropDown);
@@ -22,9 +23,39 @@ export default function MobileNav() {
         setShowDropDown(!showDropDown);
     };
 
+    const listenToScroll = () => {
+        let heightToHideFrom = 30;
+        const winScroll =
+            document.body.scrollTop || document.documentElement.scrollTop;
+        if (winScroll > heightToHideFrom) {
+            setShowDropDown(false);
+        } else {
+            setShowDropDown(false);
+        }
+    };
+
     useEffect(() => {}, [showDropDown]);
+
+    useEffect(() => {
+        if (listening) return;
+        if (!menuRef.current) return;
+        setListening(true);
+        [`click`, `touchstart`].forEach((type) => {
+            document.addEventListener(`click`, (evt) => {
+                const cur = menuRef.current;
+                const node = evt.target;
+                if (cur.contains(node)) return;
+                setShowDropDown(false);
+            });
+        });
+    }, [listening]);
+
+    useEffect(() => {
+        window.addEventListener("scroll", listenToScroll);
+    }, []);
+
     return (
-        <div className="order-last md:hidden">
+        <div ref={menuRef} className={`order-last md:hidden`}>
             <button className="" onClick={toggleDropDown}>
                 <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -47,9 +78,9 @@ export default function MobileNav() {
                     <NavLink onClick={trending}>Trending</NavLink>
                 </div>
             ) : (
-                <div className="fixed z-10 flex flex-col items-center gap-2 px-0 py-0 transition-all duration-300 rounded opacity-0 right-11 bg-three">
-                    <NavLink>Home</NavLink>
-                    <NavLink>Trending</NavLink>
+                <div className="fixed invisible right-11 flex flex-col opacity-0 transition-all duration-300 items-center bg-three rounded px-1.5 py-3 gap-2 z-10">
+                    <p className="text-2xl px-2 font-normal">Home</p>
+                    <p className="text-2xl px-2 font-normal">Trending</p>
                 </div>
             )}
         </div>
