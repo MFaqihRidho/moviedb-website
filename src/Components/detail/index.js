@@ -31,7 +31,9 @@ export default function MovieDetail(props) {
                     >
                         {props.tagline
                             ? props.tagline
-                            : `${props.season} season and ${props.episode} episode`}
+                            : props.season && props.episode
+                            ? `${props.season} season and ${props.episode} episode`
+                            : ""}
                     </h3>
                     <p className="text-white mb-4 text-lg font-normal">
                         {`${
