@@ -7,8 +7,9 @@ import MovieLoading from "../../Components/atoms/movie details loading";
 
 export default function Movie() {
     const [data, setData] = useState([]);
-    const [video, setVideo] = useState([]);
     const [genres, setGenres] = useState([]);
+    const [trailer, setTrailer] = useState([]);
+    const [teaser, setTeaser] = useState([]);
     const [loading, setloading] = useState(false);
     const [failed, setFailed] = useState(false);
     let params = useParams();
@@ -44,7 +45,19 @@ export default function Movie() {
                 )
                     .then((response) => response.json())
                     .then((results) => {
-                        setVideo(results.results[0]);
+                        for (let i = 0; i < results.results.length; i++) {
+                            if (
+                                results.results[i].type === "Trailer" &&
+                                results.results[i].site === "YouTube"
+                            ) {
+                                setTrailer(results.results[i]);
+                            } else if (
+                                results.results[i].type === "Teaser" &&
+                                results.results[i].site === "YouTube"
+                            ) {
+                                setTeaser(results.results[i]);
+                            }
+                        }
                         setloading(false);
                     });
             } catch (e) {
@@ -67,11 +80,19 @@ export default function Movie() {
             ) : (
                 <MovieDetail
                     title={data.title}
+                    tagline={data.tagline}
+                    time={data.runtime}
                     backdrop={data.backdrop_path}
                     poster={data.poster_path}
                     vote={data.vote_average}
                     overview={data.overview}
-                    video={video}
+                    video={
+                        trailer.length !== 0
+                            ? trailer
+                            : teaser.length !== 0
+                            ? teaser
+                            : null
+                    }
                     genres={genres}
                 ></MovieDetail>
             )}

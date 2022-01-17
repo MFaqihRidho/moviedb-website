@@ -12,18 +12,42 @@ export default function MovieDetail(props) {
             </div>
             <div
                 className={`relative flex flex-col items-start px-16 ${
-                    props.backdrop ? "-mt-24" : null
+                    props.backdrop ? "-mt-28" : null
                 } md:items-end md:flex-row`}
             >
                 <img
                     src={`https://image.tmdb.org/t/p/w500/${props.poster}`}
                     alt=""
-                    className="rounded md:h-56"
+                    className="rounded md:h-80"
                 />
                 <div className="px-0 py-3 md:py-0 md:px-10">
-                    <h1 className="mb-4 md:mb-3 text-2xl font-semibold text-white md:text-4xl">
+                    <h1 className="mb-2 md:mb-1 text-2xl font-semibold text-white md:text-4xl">
                         {props.title}
                     </h1>
+                    <h3
+                        className={`mb-2 md:mb-1 ${
+                            props.tagline ? "italic" : ""
+                        } text-xl font-medium text-white md:text-2xl`}
+                    >
+                        {props.tagline
+                            ? props.tagline
+                            : `${props.season} season and ${props.episode} episode`}
+                    </h3>
+                    <p className="text-white mb-4 text-lg font-normal">
+                        {`${
+                            Math.floor(props.time / 60) === 0
+                                ? ""
+                                : `${Math.floor(props.time / 60)}h`
+                        } ${
+                            props.time - Math.floor(props.time / 60) * 60 === 0
+                                ? ""
+                                : `${
+                                      props.time -
+                                      Math.floor(props.time / 60) * 60
+                                  }m `
+                        }`}
+                        {props.episode ? " in one episode" : ""}
+                    </p>
                     <div className="grid grid-cols-2 items-center md:flex align-middle text-center md:mb-4 mb-8 gap-3 md:gap-0 md:space-x-4">
                         {props.genres.includes(10759) ? (
                             <p className="text-black px-2 font-medium transition duration-300 bg-purple-500 rounded hover:bg-purple-600">
@@ -173,18 +197,27 @@ export default function MovieDetail(props) {
                         <p className="text-xl font-medium text-white sm:text-2xl">
                             {props.vote}
                         </p>
-                        <a
-                            href={
-                                props.video
-                                    ? `https://www.youtube.com/watch?v=${props.video.key}`
-                                    : `https://www.youtube.com/results?search_query=${props.title}`
-                            }
-                            className="px-3 py-1 font-medium text-black transition duration-300 bg-yellow-400 rounded hover:bg-yellow-600 ml-7"
-                            target="_blank"
-                            rel="noreferrer"
-                        >
-                            Play Trailer
-                        </a>
+
+                        {props.video ? (
+                            <a
+                                href={
+                                    props.video.key
+                                        ? `https://www.youtube.com/watch?v=${props.video.key}`
+                                        : `https://www.youtube.com/results?search_query=${props.title}`
+                                }
+                                className={`px-3 py-1 font-medium text-black transition duration-300 ${
+                                    props.video.type === "Trailer"
+                                        ? "bg-yellow-400 hover:bg-yellow-600"
+                                        : props.video.type === "Teaser"
+                                        ? "bg-green-400 hover:bg-green-600"
+                                        : ""
+                                } rounded  ml-7`}
+                                target="_blank"
+                                rel="noreferrer"
+                            >
+                                {`Play ${props.video.type}`}
+                            </a>
+                        ) : null}
                     </div>
                 </div>
             </div>
