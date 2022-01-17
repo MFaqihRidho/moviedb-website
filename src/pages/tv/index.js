@@ -66,8 +66,6 @@ export default function Tv() {
         };
         fetchData();
         fetchTrailer();
-        console.log(trailer);
-        console.log(teaser);
     }, [params.id]);
 
     return (
