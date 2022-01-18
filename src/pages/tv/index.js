@@ -74,13 +74,17 @@ export default function Tv() {
             {loading ? (
                 <MovieLoading></MovieLoading>
             ) : failed ? (
-                <h1 className="text-white px-10 py-10 text-5xl font-semibold">
+                <h1 className="px-10 py-10 text-5xl font-semibold text-white">
                     Not Found
                 </h1>
             ) : (
                 <MovieDetail
                     title={data.name}
-                    time={data.episode_run_time}
+                    time={
+                        Array.isArray(data.episode_run_time)
+                            ? data.episode_run_time.join("m, ")
+                            : data.episode_run_time
+                    }
                     episode={data.number_of_episodes}
                     season={data.number_of_seasons}
                     backdrop={data.backdrop_path}
