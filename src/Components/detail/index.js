@@ -51,9 +51,11 @@ export default function MovieDetail(props) {
                                             Math.floor(props.time / 60) * 60
                                         }m `
                               }`
-                            : props.time}
+                            : props.time
+                            ? props.time
+                            : "unknown"}
 
-                        {props.episode ? "m in one episode" : ""}
+                        {props.episode && props.time ? "m in one episode" : ""}
                     </p>
                     <div className="grid items-center grid-cols-2 gap-3 mb-8 text-center align-middle md:flex md:mb-4 md:gap-0 md:space-x-4">
                         {props.genres.includes(10759) ? (
