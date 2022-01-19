@@ -20,7 +20,7 @@ export default function MobileNav() {
     };
 
     const genre = () => {
-        navigate("/genre/action");
+        navigate("/genre");
         setShowDropDown(!showDropDown);
     };
 
@@ -85,9 +85,9 @@ export default function MobileNav() {
                 </div>
             ) : (
                 <div className="fixed invisible right-11 flex flex-col opacity-0 transition-all duration-300 items-center bg-three rounded px-1.5 py-3 gap-2 z-10">
-                    <p className="text-2xl px-2 font-normal">Home</p>
-                    <p className="text-2xl px-2 font-normal">Trending</p>
-                    <p className="text-2xl px-2 font-normal">Genre</p>
+                    <p className="px-2 text-2xl font-normal">Home</p>
+                    <p className="px-2 text-2xl font-normal">Trending</p>
+                    <p className="px-2 text-2xl font-normal">Genre</p>
                 </div>
             )}
         </div>

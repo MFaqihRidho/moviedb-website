@@ -34,7 +34,7 @@ export default function Navbar() {
     };
 
     const genre = () => {
-        navigate("/genre/action");
+        navigate("/genre");
     };
 
     return (
