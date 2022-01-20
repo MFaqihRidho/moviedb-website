@@ -6,15 +6,15 @@ import { apiKey } from "../../config";
 
 export default function RandomGenre() {
     const [dataMovie, setDataMovie] = useState([]);
-    const [dataTv, setDataTv] = useState([]);
+    const [dataGenreList, setDataGenreList] = useState([]);
     const [loading, setloading] = useState(false);
     let navigate = useNavigate();
 
-    const fetchDataMovie = async () => {
+    const fetchDataMovie = async (id) => {
         setloading(true);
         try {
             fetch(
-                `https://api.themoviedb.org/3/discover/movie?language=en-US&include_adult=false&include_video=false&page=1&with_genres=28&api_key=${apiKey}`
+                `https://api.themoviedb.org/3/discover/movie?language=en-US&&sort_by=popularity.desc&include_adult=false&include_video=false&page=1&with_genres=${id}&api_key=${apiKey}`
             )
                 .then((response) => response.json())
                 .then((results) => {
@@ -26,15 +26,17 @@ export default function RandomGenre() {
         }
     };
 
-    const fetchDataTv = async () => {
+    const fetchDataGenreList = async () => {
         setloading(true);
         try {
             fetch(
-                `https://api.themoviedb.org/3/discover/tv?language=en-US&include_adult=false&include_video=false&page=1&with_genres=action&api_key=${apiKey}`
+                `https://api.themoviedb.org/3/genre/movie/list?api_key=${apiKey}&language=en-US`
             )
                 .then((response) => response.json())
                 .then((results) => {
-                    setDataTv(results.results);
+                    const random = Math.floor(Math.random() * 19);
+                    setDataGenreList(results.genres[random]);
+                    fetchDataMovie(results.genres[random].id);
                     setloading(false);
                 });
         } catch (e) {
@@ -43,8 +45,12 @@ export default function RandomGenre() {
     };
 
     useEffect(() => {
-        fetchDataMovie();
-        fetchDataTv();
+        fetchDataGenreList();
+        console.log(dataGenreList);
+        console.log(dataGenreList);
+        console.log(dataGenreList);
+        console.log(dataGenreList);
+        console.log(dataMovie);
     }, []);
 
     return (
@@ -52,8 +58,8 @@ export default function RandomGenre() {
             id="trending"
             className="px-5 py-6 sm:py-36 md:px-10 lg:px-14 md:py-8"
         >
-            <h1 className="mb-3 text-2xl font-semibold text-white lg:px-1 md:text-5xl sm:mb-5 md:mb-8">
-                Random Movies With Genre Science Fiction
+            <h1 className="mb-3 text-center text-2xl font-semibold text-white lg:px-1 md:text-5xl sm:mb-5 md:mb-8">
+                Popular Movies With Genre {dataGenreList.name}
             </h1>
             {loading ? (
                 <div className="grid grid-cols-3 gap-6 sm:grid-cols-3 lg:grid-cols-5 xl:grid-cols-6 justify-items-center sm:gap-10 md:gap-12 lg:gap-14 mb-7 md:mb-16 xl:gap-y-9">
@@ -72,16 +78,6 @@ export default function RandomGenre() {
                             onClick={(e) => navigate(`/movie/${e.target.id}`)}
                             title={cardData.title}
                             year={cardData.release_date}
-                            image={cardData.poster_path}
-                            vote={cardData.vote_average}
-                        ></Card>
-                    ))}
-                    {dataTv.map((cardData) => (
-                        <Card
-                            id={cardData.id}
-                            onClick={(e) => navigate(`/tv/${e.target.id}`)}
-                            title={cardData.name}
-                            year={cardData.first_air_date}
                             image={cardData.poster_path}
                             vote={cardData.vote_average}
                         ></Card>
