@@ -46,7 +46,7 @@ export default function Footer() {
                         TMDB{" "}
                     </a>
                 </p>
-                <p className="text-white">
+                <p className="text-white text-center">
                     Icon vector created by ikaika -{" "}
                     <a href="https://www.freepik.com/vectors/icon">
                         www.freepik.com
