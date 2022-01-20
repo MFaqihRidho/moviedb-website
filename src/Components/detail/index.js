@@ -1,6 +1,8 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 export default function MovieDetail(props) {
+    let navigate = useNavigate();
     return (
         <div>
             <div>
@@ -57,137 +59,299 @@ export default function MovieDetail(props) {
                     </p>
                     <div className="grid items-center grid-cols-2 gap-3 mb-8 text-center align-middle md:flex md:mb-4 md:gap-0 md:space-x-4">
                         {props.genres.includes(10759) ? (
-                            <p className="px-2 font-medium text-black transition duration-300 bg-purple-500 rounded hover:bg-purple-600">
+                            <p
+                                onClick={(e) =>
+                                    navigate(`/genre/${e.target.id}`)
+                                }
+                                id="10759"
+                                className="px-2 font-medium text-black transition duration-300 bg-purple-500 rounded cursor-pointer hover:bg-purple-600"
+                            >
                                 Action & Adventure
                             </p>
                         ) : null}
                         {props.genres.includes(28) ? (
-                            <p className="px-2 font-medium text-black transition duration-300 bg-red-500 rounded hover:bg-red-600">
+                            <p
+                                onClick={(e) =>
+                                    navigate(`/genre/${e.target.id}`)
+                                }
+                                id="28"
+                                className="px-2 font-medium text-black transition duration-300 bg-red-500 rounded hover:bg-red-600"
+                            >
                                 Action
                             </p>
                         ) : null}
                         {props.genres.includes(12) ? (
-                            <p className="px-2 font-medium text-black transition duration-300 bg-teal-400 rounded hover:bg-teal-600">
+                            <p
+                                onClick={(e) =>
+                                    navigate(`/genre/${e.target.id}`)
+                                }
+                                id="12"
+                                className="px-2 font-medium text-black transition duration-300 bg-teal-400 rounded hover:bg-teal-600"
+                            >
                                 Adventure
                             </p>
                         ) : null}
                         {props.genres.includes(16) ? (
-                            <p className="px-2 font-medium text-black transition duration-300 bg-blue-400 rounded hover:bg-blue-600">
+                            <p
+                                onClick={(e) =>
+                                    navigate(`/genre/${e.target.id}`)
+                                }
+                                id="16"
+                                className="px-2 font-medium text-black transition duration-300 bg-blue-400 rounded hover:bg-blue-600"
+                            >
                                 Animation
                             </p>
                         ) : null}
                         {props.genres.includes(80) ? (
-                            <p className="px-2 font-medium text-black transition duration-300 bg-red-600 rounded hover:bg-red-800">
+                            <p
+                                onClick={(e) =>
+                                    navigate(`/genre/${e.target.id}`)
+                                }
+                                id="80"
+                                className="px-2 font-medium text-black transition duration-300 bg-red-600 rounded hover:bg-red-800"
+                            >
                                 Crime
                             </p>
                         ) : null}
                         {props.genres.includes(35) ? (
-                            <p className="px-2 font-medium text-black transition duration-300 bg-yellow-400 rounded hover:bg-yellow-600">
+                            <p
+                                onClick={(e) =>
+                                    navigate(`/genre/${e.target.id}`)
+                                }
+                                id="35"
+                                className="px-2 font-medium text-black transition duration-300 bg-yellow-400 rounded hover:bg-yellow-600"
+                            >
                                 Comedy
                             </p>
                         ) : null}
                         {props.genres.includes(18) ? (
-                            <p className="px-2 font-medium text-black transition duration-300 bg-green-400 rounded hover:bg-green-600">
+                            <p
+                                onClick={(e) =>
+                                    navigate(`/genre/${e.target.id}`)
+                                }
+                                id="18"
+                                className="px-2 font-medium text-black transition duration-300 bg-green-400 rounded hover:bg-green-600"
+                            >
                                 Drama
                             </p>
                         ) : null}
                         {props.genres.includes(99) ? (
-                            <p className="px-2 font-medium text-black transition duration-300 bg-white rounded hover:bg-gray-400">
+                            <p
+                                onClick={(e) =>
+                                    navigate(`/genre/${e.target.id}`)
+                                }
+                                id="99"
+                                className="px-2 font-medium text-black transition duration-300 bg-white rounded hover:bg-gray-400"
+                            >
                                 Documentary
                             </p>
                         ) : null}
                         {props.genres.includes(10751) ? (
-                            <p className="px-2 font-medium text-black transition duration-300 bg-orange-400 rounded hover:bg-orange-600">
+                            <p
+                                onClick={(e) =>
+                                    navigate(`/genre/${e.target.id}`)
+                                }
+                                id="10751"
+                                className="px-2 font-medium text-black transition duration-300 bg-orange-400 rounded hover:bg-orange-600"
+                            >
                                 Family
                             </p>
                         ) : null}
                         {props.genres.includes(14) ? (
-                            <p className="px-2 font-medium text-black transition duration-300 rounded bg-lime-400 hover:bg-lime-600">
+                            <p
+                                onClick={(e) =>
+                                    navigate(`/genre/${e.target.id}`)
+                                }
+                                id="14"
+                                className="px-2 font-medium text-black transition duration-300 rounded bg-lime-400 hover:bg-lime-600"
+                            >
                                 Fantasy
                             </p>
                         ) : null}
                         {props.genres.includes(36) ? (
-                            <p className="px-2 font-medium text-black transition duration-300 rounded bg-amber-400 hover:bg-amber-600">
+                            <p
+                                onClick={(e) =>
+                                    navigate(`/genre/${e.target.id}`)
+                                }
+                                id="36"
+                                className="px-2 font-medium text-black transition duration-300 rounded bg-amber-400 hover:bg-amber-600"
+                            >
                                 History
                             </p>
                         ) : null}
                         {props.genres.includes(27) ? (
-                            <p className="px-2 font-medium text-black transition duration-300 bg-red-700 rounded hover:bg-red-900">
+                            <p
+                                onClick={(e) =>
+                                    navigate(`/genre/${e.target.id}`)
+                                }
+                                id="27"
+                                className="px-2 font-medium text-black transition duration-300 bg-red-700 rounded hover:bg-red-900"
+                            >
                                 Horror
                             </p>
                         ) : null}
                         {props.genres.includes(10762) ? (
-                            <p className="px-2 font-medium text-black transition duration-300 bg-orange-400 rounded hover:bg-orange-600">
+                            <p
+                                onClick={(e) =>
+                                    navigate(`/genre/${e.target.id}`)
+                                }
+                                id="10762"
+                                className="px-2 font-medium text-black transition duration-300 bg-orange-400 rounded hover:bg-orange-600"
+                            >
                                 Kids
                             </p>
                         ) : null}
                         {props.genres.includes(10402) ? (
-                            <p className="px-2 font-medium text-black transition duration-300 bg-indigo-400 rounded hover:bg-indigo-600">
+                            <p
+                                onClick={(e) =>
+                                    navigate(`/genre/${e.target.id}`)
+                                }
+                                id="10402"
+                                className="px-2 font-medium text-black transition duration-300 bg-indigo-400 rounded hover:bg-indigo-600"
+                            >
                                 Music
                             </p>
                         ) : null}
                         {props.genres.includes(9648) ? (
-                            <p className="px-2 font-medium text-black transition duration-300 bg-gray-600 rounded hover:bg-gray-800">
+                            <p
+                                onClick={(e) =>
+                                    navigate(`/genre/${e.target.id}`)
+                                }
+                                id="9648"
+                                className="px-2 font-medium text-black transition duration-300 bg-gray-600 rounded hover:bg-gray-800"
+                            >
                                 Mystery
                             </p>
                         ) : null}
                         {props.genres.includes(10763) ? (
-                            <p className="px-2 font-medium text-black transition duration-300 bg-gray-600 rounded hover:bg-gray-800">
+                            <p
+                                onClick={(e) =>
+                                    navigate(`/genre/${e.target.id}`)
+                                }
+                                id="10763"
+                                className="px-2 font-medium text-black transition duration-300 bg-gray-600 rounded hover:bg-gray-800"
+                            >
                                 News
                             </p>
                         ) : null}
                         {props.genres.includes(10764) ? (
-                            <p className="px-2 font-medium text-black transition duration-300 bg-gray-600 rounded hover:bg-gray-800">
+                            <p
+                                onClick={(e) =>
+                                    navigate(`/genre/${e.target.id}`)
+                                }
+                                id="10764"
+                                className="px-2 font-medium text-black transition duration-300 bg-gray-600 rounded hover:bg-gray-800"
+                            >
                                 Reality
                             </p>
                         ) : null}
                         {props.genres.includes(10765) ? (
-                            <p className="px-2 font-medium text-black transition duration-300 rounded bg-emerald-600 hover:bg-emerald-800">
+                            <p
+                                onClick={(e) =>
+                                    navigate(`/genre/${e.target.id}`)
+                                }
+                                id="10765"
+                                className="px-2 font-medium text-black transition duration-300 rounded bg-emerald-600 hover:bg-emerald-800"
+                            >
                                 Sci-Fi & Fantasy
                             </p>
                         ) : null}
                         {props.genres.includes(10766) ? (
-                            <p className="px-2 font-medium text-black transition duration-300 bg-pink-400 rounded hover:bg-pink-600">
+                            <p
+                                onClick={(e) =>
+                                    navigate(`/genre/${e.target.id}`)
+                                }
+                                id="10766"
+                                className="px-2 font-medium text-black transition duration-300 bg-pink-400 rounded hover:bg-pink-600"
+                            >
                                 Soap
                             </p>
                         ) : null}
                         {props.genres.includes(10749) ? (
-                            <p className="px-2 font-medium text-black transition duration-300 bg-pink-400 rounded hover:bg-pink-600">
+                            <p
+                                onClick={(e) =>
+                                    navigate(`/genre/${e.target.id}`)
+                                }
+                                id="10749"
+                                className="px-2 font-medium text-black transition duration-300 bg-pink-400 rounded hover:bg-pink-600"
+                            >
                                 Romance
                             </p>
                         ) : null}
                         {props.genres.includes(878) ? (
-                            <p className="px-2 font-medium text-black transition duration-300 rounded bg-emerald-400 hover:bg-emerald-600">
+                            <p
+                                onClick={(e) =>
+                                    navigate(`/genre/${e.target.id}`)
+                                }
+                                id="878"
+                                className="px-2 font-medium text-black transition duration-300 rounded bg-emerald-400 hover:bg-emerald-600"
+                            >
                                 Science Fiction
                             </p>
                         ) : null}
                         {props.genres.includes(10770) ? (
-                            <p className="px-2 font-medium text-black transition duration-300 bg-white rounded hover:bg-gray-400">
+                            <p
+                                onClick={(e) =>
+                                    navigate(`/genre/${e.target.id}`)
+                                }
+                                id="10770"
+                                className="px-2 font-medium text-black transition duration-300 bg-white rounded hover:bg-gray-400"
+                            >
                                 TV Movie
                             </p>
                         ) : null}
                         {props.genres.includes(53) ? (
-                            <p className="px-2 font-medium text-black transition duration-300 bg-red-500 rounded hover:bg-red-700">
+                            <p
+                                onClick={(e) =>
+                                    navigate(`/genre/${e.target.id}`)
+                                }
+                                id="53"
+                                className="px-2 font-medium text-black transition duration-300 bg-red-500 rounded hover:bg-red-700"
+                            >
                                 Thriller
                             </p>
                         ) : null}
                         {props.genres.includes(10752) ? (
-                            <p className="px-2 font-medium text-black transition duration-300 bg-gray-600 rounded hover:bg-gray-800">
+                            <p
+                                onClick={(e) =>
+                                    navigate(`/genre/${e.target.id}`)
+                                }
+                                id="10752"
+                                className="px-2 font-medium text-black transition duration-300 bg-gray-600 rounded hover:bg-gray-800"
+                            >
                                 War
                             </p>
                         ) : null}
                         {props.genres.includes(10767) ? (
-                            <p className="px-2 font-medium text-black transition duration-300 bg-yellow-600 rounded hover:bg-yellow-800">
+                            <p
+                                onClick={(e) =>
+                                    navigate(`/genre/${e.target.id}`)
+                                }
+                                id="10767"
+                                className="px-2 font-medium text-black transition duration-300 bg-yellow-600 rounded hover:bg-yellow-800"
+                            >
                                 Talk
                             </p>
                         ) : null}
                         {props.genres.includes(10768) ? (
-                            <p className="px-2 font-medium text-black transition duration-300 bg-gray-600 rounded hover:bg-gray-800">
+                            <p
+                                onClick={(e) =>
+                                    navigate(`/genre/${e.target.id}`)
+                                }
+                                id="10768"
+                                className="px-2 font-medium text-black transition duration-300 bg-gray-600 rounded hover:bg-gray-800"
+                            >
                                 War & Politics
                             </p>
                         ) : null}
                         {props.genres.includes(37) ? (
-                            <p className="px-2 font-medium text-black transition duration-300 bg-yellow-400 rounded hover:bg-yellow-600">
+                            <p
+                                onClick={(e) =>
+                                    navigate(`/genre/${e.target.id}`)
+                                }
+                                id="37"
+                                className="px-2 font-medium text-black transition duration-300 bg-yellow-400 rounded hover:bg-yellow-600"
+                            >
                                 Western
                             </p>
                         ) : null}
