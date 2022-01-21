@@ -33,6 +33,10 @@ export default function Navbar() {
         document.getElementById("trending").scrollIntoView();
     };
 
+    const genre = () => {
+        navigate("/genre");
+    };
+
     return (
         <nav className="w-full h-20 antialiased text-white shadow bg-one">
             <div className="container flex items-center justify-between h-full px-6 mx-auto lg:px-0">
@@ -42,6 +46,7 @@ export default function Navbar() {
                 <div className="hidden lg:gap-5 sm:order-last row md:flex">
                     <Navlink onClick={home}>Home</Navlink>
                     <Navlink onClick={trending}>Trending</Navlink>
+                    <Navlink onClick={genre}>Genre</Navlink>
                 </div>
                 <div className="relative order-3">
                     <div class="hidden md:block absolute top-2.5 left-3">
