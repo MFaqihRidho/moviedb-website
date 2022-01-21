@@ -66,7 +66,7 @@ export default function MovieDetail(props) {
                                     navigate(`/genre/${e.target.id}`)
                                 }
                                 id="10759"
-                                className="px-2 font-medium text-black transition duration-300 bg-purple-500 rounded cursor-pointer hover:bg-purple-600"
+                                className="px-2 font-medium text-black cursor-pointer transition duration-300 bg-purple-500 rounded cursor-pointer hover:bg-purple-600"
                             >
                                 Action & Adventure
                             </p>
@@ -77,7 +77,7 @@ export default function MovieDetail(props) {
                                     navigate(`/genre/${e.target.id}`)
                                 }
                                 id="28"
-                                className="px-2 font-medium text-black transition duration-300 bg-red-500 rounded hover:bg-red-600"
+                                className="px-2 font-medium text-black cursor-pointer transition duration-300 bg-red-500 rounded hover:bg-red-600"
                             >
                                 Action
                             </p>
@@ -88,7 +88,7 @@ export default function MovieDetail(props) {
                                     navigate(`/genre/${e.target.id}`)
                                 }
                                 id="12"
-                                className="px-2 font-medium text-black transition duration-300 bg-teal-400 rounded hover:bg-teal-600"
+                                className="px-2 font-medium text-black cursor-pointer transition duration-300 bg-teal-400 rounded hover:bg-teal-600"
                             >
                                 Adventure
                             </p>
@@ -99,7 +99,7 @@ export default function MovieDetail(props) {
                                     navigate(`/genre/${e.target.id}`)
                                 }
                                 id="16"
-                                className="px-2 font-medium text-black transition duration-300 bg-blue-400 rounded hover:bg-blue-600"
+                                className="px-2 font-medium text-black cursor-pointer transition duration-300 bg-blue-400 rounded hover:bg-blue-600"
                             >
                                 Animation
                             </p>
@@ -110,7 +110,7 @@ export default function MovieDetail(props) {
                                     navigate(`/genre/${e.target.id}`)
                                 }
                                 id="80"
-                                className="px-2 font-medium text-black transition duration-300 bg-red-600 rounded hover:bg-red-800"
+                                className="px-2 font-medium text-black cursor-pointer transition duration-300 bg-red-600 rounded hover:bg-red-800"
                             >
                                 Crime
                             </p>
@@ -121,7 +121,7 @@ export default function MovieDetail(props) {
                                     navigate(`/genre/${e.target.id}`)
                                 }
                                 id="35"
-                                className="px-2 font-medium text-black transition duration-300 bg-yellow-400 rounded hover:bg-yellow-600"
+                                className="px-2 font-medium text-black cursor-pointer transition duration-300 bg-yellow-400 rounded hover:bg-yellow-600"
                             >
                                 Comedy
                             </p>
@@ -132,7 +132,7 @@ export default function MovieDetail(props) {
                                     navigate(`/genre/${e.target.id}`)
                                 }
                                 id="18"
-                                className="px-2 font-medium text-black transition duration-300 bg-green-400 rounded hover:bg-green-600"
+                                className="px-2 font-medium text-black cursor-pointer transition duration-300 bg-green-400 rounded hover:bg-green-600"
                             >
                                 Drama
                             </p>
@@ -143,7 +143,7 @@ export default function MovieDetail(props) {
                                     navigate(`/genre/${e.target.id}`)
                                 }
                                 id="99"
-                                className="px-2 font-medium text-black transition duration-300 bg-white rounded hover:bg-gray-400"
+                                className="px-2 font-medium text-black cursor-pointer transition duration-300 bg-white rounded hover:bg-gray-400"
                             >
                                 Documentary
                             </p>
@@ -154,7 +154,7 @@ export default function MovieDetail(props) {
                                     navigate(`/genre/${e.target.id}`)
                                 }
                                 id="10751"
-                                className="px-2 font-medium text-black transition duration-300 bg-orange-400 rounded hover:bg-orange-600"
+                                className="px-2 font-medium text-black cursor-pointer transition duration-300 bg-orange-400 rounded hover:bg-orange-600"
                             >
                                 Family
                             </p>
@@ -165,7 +165,7 @@ export default function MovieDetail(props) {
                                     navigate(`/genre/${e.target.id}`)
                                 }
                                 id="14"
-                                className="px-2 font-medium text-black transition duration-300 rounded bg-lime-400 hover:bg-lime-600"
+                                className="px-2 font-medium text-black cursor-pointer transition duration-300 rounded bg-lime-400 hover:bg-lime-600"
                             >
                                 Fantasy
                             </p>
@@ -176,7 +176,7 @@ export default function MovieDetail(props) {
                                     navigate(`/genre/${e.target.id}`)
                                 }
                                 id="36"
-                                className="px-2 font-medium text-black transition duration-300 rounded bg-amber-400 hover:bg-amber-600"
+                                className="px-2 font-medium text-black cursor-pointer transition duration-300 rounded bg-amber-400 hover:bg-amber-600"
                             >
                                 History
                             </p>
@@ -187,7 +187,7 @@ export default function MovieDetail(props) {
                                     navigate(`/genre/${e.target.id}`)
                                 }
                                 id="27"
-                                className="px-2 font-medium text-black transition duration-300 bg-red-700 rounded hover:bg-red-900"
+                                className="px-2 font-medium text-black cursor-pointer transition duration-300 bg-red-700 rounded hover:bg-red-900"
                             >
                                 Horror
                             </p>
@@ -198,7 +198,7 @@ export default function MovieDetail(props) {
                                     navigate(`/genre/${e.target.id}`)
                                 }
                                 id="10762"
-                                className="px-2 font-medium text-black transition duration-300 bg-orange-400 rounded hover:bg-orange-600"
+                                className="px-2 font-medium text-black cursor-pointer transition duration-300 bg-orange-400 rounded hover:bg-orange-600"
                             >
                                 Kids
                             </p>
@@ -209,7 +209,7 @@ export default function MovieDetail(props) {
                                     navigate(`/genre/${e.target.id}`)
                                 }
                                 id="10402"
-                                className="px-2 font-medium text-black transition duration-300 bg-indigo-400 rounded hover:bg-indigo-600"
+                                className="px-2 font-medium text-black cursor-pointer transition duration-300 bg-indigo-400 rounded hover:bg-indigo-600"
                             >
                                 Music
                             </p>
@@ -220,7 +220,7 @@ export default function MovieDetail(props) {
                                     navigate(`/genre/${e.target.id}`)
                                 }
                                 id="9648"
-                                className="px-2 font-medium text-black transition duration-300 bg-gray-600 rounded hover:bg-gray-800"
+                                className="px-2 font-medium text-black cursor-pointer transition duration-300 bg-gray-600 rounded hover:bg-gray-800"
                             >
                                 Mystery
                             </p>
@@ -231,7 +231,7 @@ export default function MovieDetail(props) {
                                     navigate(`/genre/${e.target.id}`)
                                 }
                                 id="10763"
-                                className="px-2 font-medium text-black transition duration-300 bg-gray-600 rounded hover:bg-gray-800"
+                                className="px-2 font-medium text-black cursor-pointer transition duration-300 bg-gray-600 rounded hover:bg-gray-800"
                             >
                                 News
                             </p>
@@ -242,7 +242,7 @@ export default function MovieDetail(props) {
                                     navigate(`/genre/${e.target.id}`)
                                 }
                                 id="10764"
-                                className="px-2 font-medium text-black transition duration-300 bg-gray-600 rounded hover:bg-gray-800"
+                                className="px-2 font-medium text-black cursor-pointer transition duration-300 bg-gray-600 rounded hover:bg-gray-800"
                             >
                                 Reality
                             </p>
@@ -253,7 +253,7 @@ export default function MovieDetail(props) {
                                     navigate(`/genre/${e.target.id}`)
                                 }
                                 id="10765"
-                                className="px-2 font-medium text-black transition duration-300 rounded bg-emerald-600 hover:bg-emerald-800"
+                                className="px-2 font-medium text-black cursor-pointer transition duration-300 rounded bg-emerald-600 hover:bg-emerald-800"
                             >
                                 Sci-Fi & Fantasy
                             </p>
@@ -264,7 +264,7 @@ export default function MovieDetail(props) {
                                     navigate(`/genre/${e.target.id}`)
                                 }
                                 id="10766"
-                                className="px-2 font-medium text-black transition duration-300 bg-pink-400 rounded hover:bg-pink-600"
+                                className="px-2 font-medium text-black cursor-pointer transition duration-300 bg-pink-400 rounded hover:bg-pink-600"
                             >
                                 Soap
                             </p>
@@ -275,7 +275,7 @@ export default function MovieDetail(props) {
                                     navigate(`/genre/${e.target.id}`)
                                 }
                                 id="10749"
-                                className="px-2 font-medium text-black transition duration-300 bg-pink-400 rounded hover:bg-pink-600"
+                                className="px-2 font-medium text-black cursor-pointer transition duration-300 bg-pink-400 rounded hover:bg-pink-600"
                             >
                                 Romance
                             </p>
@@ -286,7 +286,7 @@ export default function MovieDetail(props) {
                                     navigate(`/genre/${e.target.id}`)
                                 }
                                 id="878"
-                                className="px-2 font-medium text-black transition duration-300 rounded bg-emerald-400 hover:bg-emerald-600"
+                                className="px-2 font-medium text-black cursor-pointer transition duration-300 rounded bg-emerald-400 hover:bg-emerald-600"
                             >
                                 Science Fiction
                             </p>
@@ -297,7 +297,7 @@ export default function MovieDetail(props) {
                                     navigate(`/genre/${e.target.id}`)
                                 }
                                 id="10770"
-                                className="px-2 font-medium text-black transition duration-300 bg-white rounded hover:bg-gray-400"
+                                className="px-2 font-medium text-black cursor-pointer transition duration-300 bg-white rounded hover:bg-gray-400"
                             >
                                 TV Movie
                             </p>
@@ -308,7 +308,7 @@ export default function MovieDetail(props) {
                                     navigate(`/genre/${e.target.id}`)
                                 }
                                 id="53"
-                                className="px-2 font-medium text-black transition duration-300 bg-red-500 rounded hover:bg-red-700"
+                                className="px-2 font-medium text-black cursor-pointer transition duration-300 bg-red-500 rounded hover:bg-red-700"
                             >
                                 Thriller
                             </p>
@@ -319,7 +319,7 @@ export default function MovieDetail(props) {
                                     navigate(`/genre/${e.target.id}`)
                                 }
                                 id="10752"
-                                className="px-2 font-medium text-black transition duration-300 bg-gray-600 rounded hover:bg-gray-800"
+                                className="px-2 font-medium text-black cursor-pointer transition duration-300 bg-gray-600 rounded hover:bg-gray-800"
                             >
                                 War
                             </p>
@@ -330,7 +330,7 @@ export default function MovieDetail(props) {
                                     navigate(`/genre/${e.target.id}`)
                                 }
                                 id="10767"
-                                className="px-2 font-medium text-black transition duration-300 bg-yellow-600 rounded hover:bg-yellow-800"
+                                className="px-2 font-medium text-black cursor-pointer transition duration-300 bg-yellow-600 rounded hover:bg-yellow-800"
                             >
                                 Talk
                             </p>
@@ -341,7 +341,7 @@ export default function MovieDetail(props) {
                                     navigate(`/genre/${e.target.id}`)
                                 }
                                 id="10768"
-                                className="px-2 font-medium text-black transition duration-300 bg-gray-600 rounded hover:bg-gray-800"
+                                className="px-2 font-medium text-black cursor-pointer transition duration-300 bg-gray-600 rounded hover:bg-gray-800"
                             >
                                 War & Politics
                             </p>
@@ -352,7 +352,7 @@ export default function MovieDetail(props) {
                                     navigate(`/genre/${e.target.id}`)
                                 }
                                 id="37"
-                                className="px-2 font-medium text-black transition duration-300 bg-yellow-400 rounded hover:bg-yellow-600"
+                                className="px-2 font-medium text-black cursor-pointer transition duration-300 bg-yellow-400 rounded hover:bg-yellow-600"
                             >
                                 Western
                             </p>
