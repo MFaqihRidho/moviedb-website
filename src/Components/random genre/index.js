@@ -10,47 +10,40 @@ export default function RandomGenre() {
     const [loading, setloading] = useState(false);
     let navigate = useNavigate();
 
-    const fetchDataMovie = async (id) => {
-        setloading(true);
-        try {
-            fetch(
-                `https://api.themoviedb.org/3/discover/movie?language=en-US&&sort_by=popularity.desc&include_adult=false&include_video=false&page=1&with_genres=${id}&api_key=${apiKey}`
-            )
-                .then((response) => response.json())
-                .then((results) => {
-                    setDataMovie(results.results);
-                    setloading(false);
-                });
-        } catch (e) {
-            setloading(true);
-        }
-    };
-
-    const fetchDataGenreList = async () => {
-        setloading(true);
-        try {
-            fetch(
-                `https://api.themoviedb.org/3/genre/movie/list?api_key=${apiKey}&language=en-US`
-            )
-                .then((response) => response.json())
-                .then((results) => {
-                    const random = Math.floor(Math.random() * 19);
-                    setDataGenreList(results.genres[random]);
-                    fetchDataMovie(results.genres[random].id);
-                    setloading(false);
-                });
-        } catch (e) {
-            setloading(true);
-        }
-    };
-
     useEffect(() => {
+        const fetchDataMovie = async (id) => {
+            setloading(true);
+            try {
+                fetch(
+                    `https://api.themoviedb.org/3/discover/movie?language=en-US&&sort_by=popularity.desc&include_adult=false&include_video=false&page=1&with_genres=${id}&api_key=${apiKey}`
+                )
+                    .then((response) => response.json())
+                    .then((results) => {
+                        setDataMovie(results.results);
+                        setloading(false);
+                    });
+            } catch (e) {
+                setloading(true);
+            }
+        };
+        const fetchDataGenreList = async () => {
+            setloading(true);
+            try {
+                fetch(
+                    `https://api.themoviedb.org/3/genre/movie/list?api_key=${apiKey}&language=en-US`
+                )
+                    .then((response) => response.json())
+                    .then((results) => {
+                        const random = Math.floor(Math.random() * 19);
+                        setDataGenreList(results.genres[random]);
+                        fetchDataMovie(results.genres[random].id);
+                        setloading(false);
+                    });
+            } catch (e) {
+                setloading(true);
+            }
+        };
         fetchDataGenreList();
-        console.log(dataGenreList);
-        console.log(dataGenreList);
-        console.log(dataGenreList);
-        console.log(dataGenreList);
-        console.log(dataMovie);
     }, []);
 
     return (
@@ -58,7 +51,7 @@ export default function RandomGenre() {
             id="trending"
             className="px-5 py-6 sm:py-36 md:px-10 lg:px-14 md:py-8"
         >
-            <h1 className="mb-3 text-center text-2xl font-semibold text-white lg:px-1 md:text-5xl sm:mb-5 md:mb-8">
+            <h1 className="mb-3 text-2xl font-semibold text-center text-white lg:px-1 md:text-5xl sm:mb-5 md:mb-8">
                 Popular Movies With Genre {dataGenreList.name}
             </h1>
             {loading ? (
