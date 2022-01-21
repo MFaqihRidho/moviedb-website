@@ -3,7 +3,7 @@ import { SocialIcon } from "react-social-icons";
 
 export default function Footer() {
     return (
-        <footer className="w-full h-40 mt-10 bg-one">
+        <footer className="w-full mt-10 h-52 bg-one">
             <div className="container flex flex-col items-center justify-center h-full mx-auto bg-one">
                 <div className="py-3">
                     <SocialIcon
@@ -35,7 +35,7 @@ export default function Footer() {
                     MFaqihRidho © 2022
                 </h5>
                 <div className="w-full h-0.5 bg-white mb-2"></div>
-                <p className="text-white ">
+                <p className="mb-2 text-white">
                     Powered By{" "}
                     <a
                         href="https://www.themoviedb.org"
@@ -43,7 +43,13 @@ export default function Footer() {
                         target="_blank"
                         rel="noreferrer"
                     >
-                        TMDB
+                        TMDB{" "}
+                    </a>
+                </p>
+                <p className="text-white text-center">
+                    Icon vector created by ikaika -{" "}
+                    <a href="https://www.freepik.com/vectors/icon">
+                        www.freepik.com
                     </a>
                 </p>
             </div>

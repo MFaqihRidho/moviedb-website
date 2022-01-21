@@ -1,6 +1,7 @@
 {
   "short_name": "MovieDb app",
   "name": "MovieDB app using TMDB",
+
   "icons": [
     {
       "src": "favicon.ico",
