@@ -10,7 +10,7 @@ export default function GenreCard() {
     const [dataGenreListMovie, setDataGenreListMovie] = useState("");
     const [dataGenreListTv, setDataGenreListTv] = useState("");
     const [totalPageMovie, setTotalPageMovie] = useState(0);
-    const [totalPageTv, setTotalPageTv] = useState(500);
+    const [totalPageTv, setTotalPageTv] = useState(0);
     const [loading, setloading] = useState(true);
     let params = useParams();
     let navigate = useNavigate();
@@ -183,7 +183,11 @@ export default function GenreCard() {
                 </button>
                 <p className="text-2xl">
                     page {params.num} of{" "}
-                    {totalPageMovie > 500 ? 500 : totalPageMovie}
+                    {totalPageMovie > 500 || totalPageTv > 500
+                        ? 500
+                        : totalPageMovie > totalPageTv
+                        ? totalPageMovie
+                        : totalPageTv}
                 </p>
                 <button
                     onClick={() =>
