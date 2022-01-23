@@ -9,16 +9,16 @@ export default function GenreCard() {
     const [dataTv, setDataTv] = useState([]);
     const [dataGenreListMovie, setDataGenreListMovie] = useState("");
     const [dataGenreListTv, setDataGenreListTv] = useState("");
-    const [loading, setloading] = useState(false);
+    const [loading, setloading] = useState(true);
     let params = useParams();
     let navigate = useNavigate();
 
     useEffect(() => {
-        const fetchDataMovie = async () => {
+        const fetchDataMovie = async (id) => {
             setloading(true);
             try {
                 fetch(
-                    `https://api.themoviedb.org/3/discover/movie?api_key=${apiKey}&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1&with_genres=${params.id}`
+                    `https://api.themoviedb.org/3/discover/movie?api_key=${apiKey}&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1&with_genres=${id}`
                 )
                     .then((response) => response.json())
                     .then((results) => {
@@ -30,11 +30,11 @@ export default function GenreCard() {
             }
         };
 
-        const fetchDataTv = async () => {
+        const fetchDataTv = async (id) => {
             setloading(true);
             try {
                 fetch(
-                    `https://api.themoviedb.org/3/discover/tv?api_key=${apiKey}&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1&with_genres=${params.id}`
+                    `https://api.themoviedb.org/3/discover/tv?api_key=${apiKey}&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1&with_genres=${id}`
                 )
                     .then((response) => response.json())
                     .then((results) => {
@@ -60,9 +60,10 @@ export default function GenreCard() {
                         for (let i = 0; i < results.genres.length; i++) {
                             if (results.genres[i].id.toString() === params.id) {
                                 setDataGenreListMovie(results.genres[i].name);
+                                fetchDataMovie(results.genres[i].id);
                             }
+                            setloading(false);
                         }
-                        setloading(false);
                     });
             } catch (e) {
                 setloading(true);
@@ -80,19 +81,20 @@ export default function GenreCard() {
                         for (let i = 0; i < results.genres.length; i++) {
                             if (results.genres[i].id.toString() === params.id) {
                                 setDataGenreListTv(results.genres[i].name);
+                                fetchDataTv(results.genres[i].id);
                             }
+                            setloading(false);
                         }
-                        setloading(false);
                     });
             } catch (e) {
                 setloading(true);
             }
         };
 
-        fetchDataMovie();
-        fetchDataTv();
         fetchDataGenreListMovie();
         fetchDataGenreListTv();
+        console.log(dataMovie);
+        console.log(dataMovie);
     }, [params.id]);
 
     return (
@@ -112,8 +114,10 @@ export default function GenreCard() {
                     <CardLoading></CardLoading>
                     <CardLoading></CardLoading>
                 </div>
-            ) : dataMovie.length === 0 && dataTv.length === 0 ? (
-                <h1 className="text-3xl font-normal text-white">Not Found</h1>
+            ) : dataGenreListMovie.length === 0 &&
+              dataGenreListTv.length === 0 &&
+              loading === false ? (
+                <h1 className="text-white text-3xl font-normal">Not Found</h1>
             ) : (
                 <div className="grid grid-cols-3 gap-6 sm:grid-cols-3 lg:grid-cols-5 xl:grid-cols-6 justify-items-center sm:gap-10 md:gap-12 lg:gap-14 xl:gap-y-9">
                     {dataMovie.map((cardData) => (
