@@ -90,7 +90,10 @@ export default function GenreCard() {
                 setloading(true);
             }
         };
-
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth",
+        });
         fetchDataGenreListMovie();
         fetchDataGenreListTv();
     }, [params.id]);
