@@ -63,10 +63,10 @@ export default function MovieDetail(props) {
                         {props.genres.includes(10759) ? (
                             <p
                                 onClick={(e) =>
-                                    navigate(`/genre/${e.target.id}`)
+                                    navigate(`/genre/${e.target.id}/page/1`)
                                 }
                                 id="10759"
-                                className="px-2 font-medium text-black cursor-pointer transition duration-300 bg-purple-500 rounded cursor-pointer hover:bg-purple-600"
+                                className="px-2 font-medium text-black cursor-pointer transition duration-300 bg-purple-500 rounded hover:bg-purple-600"
                             >
                                 Action & Adventure
                             </p>
@@ -74,7 +74,7 @@ export default function MovieDetail(props) {
                         {props.genres.includes(28) ? (
                             <p
                                 onClick={(e) =>
-                                    navigate(`/genre/${e.target.id}`)
+                                    navigate(`/genre/${e.target.id}/page/1`)
                                 }
                                 id="28"
                                 className="px-2 font-medium text-black cursor-pointer transition duration-300 bg-red-500 rounded hover:bg-red-600"
@@ -85,7 +85,7 @@ export default function MovieDetail(props) {
                         {props.genres.includes(12) ? (
                             <p
                                 onClick={(e) =>
-                                    navigate(`/genre/${e.target.id}`)
+                                    navigate(`/genre/${e.target.id}/page/1`)
                                 }
                                 id="12"
                                 className="px-2 font-medium text-black cursor-pointer transition duration-300 bg-teal-400 rounded hover:bg-teal-600"
@@ -96,7 +96,7 @@ export default function MovieDetail(props) {
                         {props.genres.includes(16) ? (
                             <p
                                 onClick={(e) =>
-                                    navigate(`/genre/${e.target.id}`)
+                                    navigate(`/genre/${e.target.id}/page/1`)
                                 }
                                 id="16"
                                 className="px-2 font-medium text-black cursor-pointer transition duration-300 bg-blue-400 rounded hover:bg-blue-600"
@@ -107,7 +107,7 @@ export default function MovieDetail(props) {
                         {props.genres.includes(80) ? (
                             <p
                                 onClick={(e) =>
-                                    navigate(`/genre/${e.target.id}`)
+                                    navigate(`/genre/${e.target.id}/page/1`)
                                 }
                                 id="80"
                                 className="px-2 font-medium text-black cursor-pointer transition duration-300 bg-red-600 rounded hover:bg-red-800"
@@ -118,7 +118,7 @@ export default function MovieDetail(props) {
                         {props.genres.includes(35) ? (
                             <p
                                 onClick={(e) =>
-                                    navigate(`/genre/${e.target.id}`)
+                                    navigate(`/genre/${e.target.id}/page/1`)
                                 }
                                 id="35"
                                 className="px-2 font-medium text-black cursor-pointer transition duration-300 bg-yellow-400 rounded hover:bg-yellow-600"
@@ -129,7 +129,7 @@ export default function MovieDetail(props) {
                         {props.genres.includes(18) ? (
                             <p
                                 onClick={(e) =>
-                                    navigate(`/genre/${e.target.id}`)
+                                    navigate(`/genre/${e.target.id}/page/1`)
                                 }
                                 id="18"
                                 className="px-2 font-medium text-black cursor-pointer transition duration-300 bg-green-400 rounded hover:bg-green-600"
@@ -140,7 +140,7 @@ export default function MovieDetail(props) {
                         {props.genres.includes(99) ? (
                             <p
                                 onClick={(e) =>
-                                    navigate(`/genre/${e.target.id}`)
+                                    navigate(`/genre/${e.target.id}/page/1`)
                                 }
                                 id="99"
                                 className="px-2 font-medium text-black cursor-pointer transition duration-300 bg-white rounded hover:bg-gray-400"
@@ -151,7 +151,7 @@ export default function MovieDetail(props) {
                         {props.genres.includes(10751) ? (
                             <p
                                 onClick={(e) =>
-                                    navigate(`/genre/${e.target.id}`)
+                                    navigate(`/genre/${e.target.id}/page/1`)
                                 }
                                 id="10751"
                                 className="px-2 font-medium text-black cursor-pointer transition duration-300 bg-orange-400 rounded hover:bg-orange-600"
@@ -162,7 +162,7 @@ export default function MovieDetail(props) {
                         {props.genres.includes(14) ? (
                             <p
                                 onClick={(e) =>
-                                    navigate(`/genre/${e.target.id}`)
+                                    navigate(`/genre/${e.target.id}/page/1`)
                                 }
                                 id="14"
                                 className="px-2 font-medium text-black cursor-pointer transition duration-300 rounded bg-lime-400 hover:bg-lime-600"
@@ -173,7 +173,7 @@ export default function MovieDetail(props) {
                         {props.genres.includes(36) ? (
                             <p
                                 onClick={(e) =>
-                                    navigate(`/genre/${e.target.id}`)
+                                    navigate(`/genre/${e.target.id}/page/1`)
                                 }
                                 id="36"
                                 className="px-2 font-medium text-black cursor-pointer transition duration-300 rounded bg-amber-400 hover:bg-amber-600"
@@ -184,7 +184,7 @@ export default function MovieDetail(props) {
                         {props.genres.includes(27) ? (
                             <p
                                 onClick={(e) =>
-                                    navigate(`/genre/${e.target.id}`)
+                                    navigate(`/genre/${e.target.id}/page/1`)
                                 }
                                 id="27"
                                 className="px-2 font-medium text-black cursor-pointer transition duration-300 bg-red-700 rounded hover:bg-red-900"
@@ -195,7 +195,7 @@ export default function MovieDetail(props) {
                         {props.genres.includes(10762) ? (
                             <p
                                 onClick={(e) =>
-                                    navigate(`/genre/${e.target.id}`)
+                                    navigate(`/genre/${e.target.id}/page/1`)
                                 }
                                 id="10762"
                                 className="px-2 font-medium text-black cursor-pointer transition duration-300 bg-orange-400 rounded hover:bg-orange-600"
@@ -206,7 +206,7 @@ export default function MovieDetail(props) {
                         {props.genres.includes(10402) ? (
                             <p
                                 onClick={(e) =>
-                                    navigate(`/genre/${e.target.id}`)
+                                    navigate(`/genre/${e.target.id}/page/1`)
                                 }
                                 id="10402"
                                 className="px-2 font-medium text-black cursor-pointer transition duration-300 bg-indigo-400 rounded hover:bg-indigo-600"
@@ -217,7 +217,7 @@ export default function MovieDetail(props) {
                         {props.genres.includes(9648) ? (
                             <p
                                 onClick={(e) =>
-                                    navigate(`/genre/${e.target.id}`)
+                                    navigate(`/genre/${e.target.id}/page/1`)
                                 }
                                 id="9648"
                                 className="px-2 font-medium text-black cursor-pointer transition duration-300 bg-gray-600 rounded hover:bg-gray-800"
@@ -228,7 +228,7 @@ export default function MovieDetail(props) {
                         {props.genres.includes(10763) ? (
                             <p
                                 onClick={(e) =>
-                                    navigate(`/genre/${e.target.id}`)
+                                    navigate(`/genre/${e.target.id}/page/1`)
                                 }
                                 id="10763"
                                 className="px-2 font-medium text-black cursor-pointer transition duration-300 bg-gray-600 rounded hover:bg-gray-800"
@@ -239,7 +239,7 @@ export default function MovieDetail(props) {
                         {props.genres.includes(10764) ? (
                             <p
                                 onClick={(e) =>
-                                    navigate(`/genre/${e.target.id}`)
+                                    navigate(`/genre/${e.target.id}/page/1`)
                                 }
                                 id="10764"
                                 className="px-2 font-medium text-black cursor-pointer transition duration-300 bg-gray-600 rounded hover:bg-gray-800"
@@ -250,7 +250,7 @@ export default function MovieDetail(props) {
                         {props.genres.includes(10765) ? (
                             <p
                                 onClick={(e) =>
-                                    navigate(`/genre/${e.target.id}`)
+                                    navigate(`/genre/${e.target.id}/page/1`)
                                 }
                                 id="10765"
                                 className="px-2 font-medium text-black cursor-pointer transition duration-300 rounded bg-emerald-600 hover:bg-emerald-800"
@@ -261,7 +261,7 @@ export default function MovieDetail(props) {
                         {props.genres.includes(10766) ? (
                             <p
                                 onClick={(e) =>
-                                    navigate(`/genre/${e.target.id}`)
+                                    navigate(`/genre/${e.target.id}/page/1`)
                                 }
                                 id="10766"
                                 className="px-2 font-medium text-black cursor-pointer transition duration-300 bg-pink-400 rounded hover:bg-pink-600"
@@ -272,7 +272,7 @@ export default function MovieDetail(props) {
                         {props.genres.includes(10749) ? (
                             <p
                                 onClick={(e) =>
-                                    navigate(`/genre/${e.target.id}`)
+                                    navigate(`/genre/${e.target.id}/page/1`)
                                 }
                                 id="10749"
                                 className="px-2 font-medium text-black cursor-pointer transition duration-300 bg-pink-400 rounded hover:bg-pink-600"
@@ -283,7 +283,7 @@ export default function MovieDetail(props) {
                         {props.genres.includes(878) ? (
                             <p
                                 onClick={(e) =>
-                                    navigate(`/genre/${e.target.id}`)
+                                    navigate(`/genre/${e.target.id}/page/1`)
                                 }
                                 id="878"
                                 className="px-2 font-medium text-black cursor-pointer transition duration-300 rounded bg-emerald-400 hover:bg-emerald-600"
@@ -294,7 +294,7 @@ export default function MovieDetail(props) {
                         {props.genres.includes(10770) ? (
                             <p
                                 onClick={(e) =>
-                                    navigate(`/genre/${e.target.id}`)
+                                    navigate(`/genre/${e.target.id}/page/1`)
                                 }
                                 id="10770"
                                 className="px-2 font-medium text-black cursor-pointer transition duration-300 bg-white rounded hover:bg-gray-400"
@@ -305,7 +305,7 @@ export default function MovieDetail(props) {
                         {props.genres.includes(53) ? (
                             <p
                                 onClick={(e) =>
-                                    navigate(`/genre/${e.target.id}`)
+                                    navigate(`/genre/${e.target.id}/page/1`)
                                 }
                                 id="53"
                                 className="px-2 font-medium text-black cursor-pointer transition duration-300 bg-red-500 rounded hover:bg-red-700"
@@ -316,7 +316,7 @@ export default function MovieDetail(props) {
                         {props.genres.includes(10752) ? (
                             <p
                                 onClick={(e) =>
-                                    navigate(`/genre/${e.target.id}`)
+                                    navigate(`/genre/${e.target.id}/page/1`)
                                 }
                                 id="10752"
                                 className="px-2 font-medium text-black cursor-pointer transition duration-300 bg-gray-600 rounded hover:bg-gray-800"
@@ -327,7 +327,7 @@ export default function MovieDetail(props) {
                         {props.genres.includes(10767) ? (
                             <p
                                 onClick={(e) =>
-                                    navigate(`/genre/${e.target.id}`)
+                                    navigate(`/genre/${e.target.id}/page/1`)
                                 }
                                 id="10767"
                                 className="px-2 font-medium text-black cursor-pointer transition duration-300 bg-yellow-600 rounded hover:bg-yellow-800"
@@ -338,7 +338,7 @@ export default function MovieDetail(props) {
                         {props.genres.includes(10768) ? (
                             <p
                                 onClick={(e) =>
-                                    navigate(`/genre/${e.target.id}`)
+                                    navigate(`/genre/${e.target.id}/page/1`)
                                 }
                                 id="10768"
                                 className="px-2 font-medium text-black cursor-pointer transition duration-300 bg-gray-600 rounded hover:bg-gray-800"
@@ -349,7 +349,7 @@ export default function MovieDetail(props) {
                         {props.genres.includes(37) ? (
                             <p
                                 onClick={(e) =>
-                                    navigate(`/genre/${e.target.id}`)
+                                    navigate(`/genre/${e.target.id}/page/1`)
                                 }
                                 id="37"
                                 className="px-2 font-medium text-black cursor-pointer transition duration-300 bg-yellow-400 rounded hover:bg-yellow-600"

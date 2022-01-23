@@ -16,7 +16,7 @@ function App() {
                     <Route path="/tv/:id" element={<Tv />} />
                     <Route path="/search/:keyword" element={<Search />} />
                     <Route path="/genre" element={<GenreList />} />
-                    <Route path="/genre/:id" element={<Genre />} />
+                    <Route path="/genre/:id/page/:num" element={<Genre />} />
                 </Routes>
             </BrowserRouter>
         </div>
