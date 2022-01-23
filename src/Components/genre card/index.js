@@ -93,8 +93,6 @@ export default function GenreCard() {
 
         fetchDataGenreListMovie();
         fetchDataGenreListTv();
-        console.log(dataMovie);
-        console.log(dataMovie);
     }, [params.id]);
 
     return (
