@@ -26,12 +26,10 @@
   <a href="">
     <img width="130" src="https://i.postimg.cc/VLngNHzB/moviedb-icon.png"/>
   </a>
-
-  <h3 align="center">Best-README-Template</h3>
+  <h3 align="center">MovieDB Website</h3>
 
   <p align="center">
     An awesome MovieDB webiste ursing TMDB
-    <br />
     <br />
     <a href="https://movie-finder-website.vercel.app">View Demo</a>
     ·
@@ -73,8 +71,19 @@
 
 <!-- ABOUT THE PROJECT -->
 ## About The Project
+### On Desktop
+[![movideb.png](https://i.postimg.cc/LX5v69sn/movideb.png)](https://postimg.cc/xJrL6SM2)
 
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
+[![Opera-Snapshot-2022-01-25-063853-movie-finder-website-vercel-app.png](https://i.postimg.cc/zGYdSYxc/Opera-Snapshot-2022-01-25-063853-movie-finder-website-vercel-app.png)](https://postimg.cc/bsLHpWcx)
+
+[![Opera-Snapshot-2022-01-25-064200-movie-finder-website-vercel-app.png](https://i.postimg.cc/3J2MHB6z/Opera-Snapshot-2022-01-25-064200-movie-finder-website-vercel-app.png)](https://postimg.cc/4m426zX1)
+
+### On Mobile
+
+[![Screenshot-20220125-064406.png](https://i.postimg.cc/vZGKwd56/Screenshot-20220125-064406.png)](https://postimg.cc/VdHgXpGY)
+
+[![Screenshot-20220125-064418.png](https://i.postimg.cc/9Mw8YXHs/Screenshot-20220125-064418.png)](https://postimg.cc/N9YkgcMx)
+
 
 There are many great README templates available on GitHub; however, I didn't find one that really suited my needs so I created this enhanced one. I want to create a README template so amazing that it'll be the last one you ever need -- I think this is it.
 
