@@ -1,6 +1,6 @@
 import React from "react";
 import Navbar from "../../Components/navbar";
-import Result from "../../Components/result";
+import Result from "../../Components/card list/result";
 import Footer from "../../Components/footer";
 
 export default function Search() {

@@ -23,14 +23,13 @@ export default function Navbar() {
 
     const search = () => {
         if (data !== "") {
-            navigate(`/search/${data}`);
+            navigate(`/search/${data}/page/1`);
             setData("");
         }
     };
 
-    const trending = () => {
-        navigate("/#trending");
-        document.getElementById("trending").scrollIntoView();
+    const upcoming = () => {
+        navigate("/upcoming/page/1");
     };
 
     const genre = () => {
@@ -45,7 +44,7 @@ export default function Navbar() {
                 </h3>
                 <div className="hidden lg:gap-5 sm:order-last row md:flex">
                     <Navlink onClick={home}>Home</Navlink>
-                    <Navlink onClick={trending}>Trending</Navlink>
+                    <Navlink onClick={upcoming}>Upcoming</Navlink>
                     <Navlink onClick={genre}>Genre</Navlink>
                 </div>
                 <div className="relative order-3">

@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import Card from "../atoms/card";
-import CardLoading from "../atoms/card loading";
-import { apiKey } from "../../config";
+import Card from "../../atoms/card";
+import CardLoading from "../../atoms/card loading";
+import { apiKey } from "../../../config";
 
 export default function RandomGenre() {
     const [dataMovie, setDataMovie] = useState([]);
@@ -47,10 +47,7 @@ export default function RandomGenre() {
     }, []);
 
     return (
-        <div
-            id="trending"
-            className="px-5 py-6 sm:py-36 md:px-10 lg:px-14 md:py-8"
-        >
+        <div className="px-5 py-6 sm:py-36 md:px-10 lg:px-14 md:py-8">
             <h1 className="mb-3 text-2xl font-semibold text-center text-white lg:px-1 md:text-5xl sm:mb-5 md:mb-8">
                 Popular Movies With Genre {dataGenreList.name}
             </h1>

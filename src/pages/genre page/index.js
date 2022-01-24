@@ -1,15 +1,13 @@
 import React from "react";
 import Navbar from "../../Components/navbar";
+import GenreCard from "../../Components/card list/genre card";
 import Footer from "../../Components/footer";
-import Genres from "../../Components/genres";
-import RandomGenre from "../../Components/card list/random genre";
 
-export default function GenreList() {
+export default function Genre() {
     return (
         <div className="min-h-screen bg-black -z-50 font-poppins">
             <Navbar></Navbar>
-            <Genres></Genres>
-            <RandomGenre></RandomGenre>
+            <GenreCard></GenreCard>
             <Footer></Footer>
         </div>
     );

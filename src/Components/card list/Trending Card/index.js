@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import Card from "../atoms/card";
-import CardLoading from "../atoms/card loading";
-import { apiKey } from "../../config";
+import Card from "../../atoms/card";
+import CardLoading from "../../atoms/card loading";
+import { apiKey } from "../../../config";
 
 export default function TrendingMovies() {
     const [dataMovie, setDataMovie] = useState([]);

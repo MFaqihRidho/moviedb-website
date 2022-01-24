@@ -1,32 +1,29 @@
 import React, { useEffect, useState } from "react";
+import { apiKey } from "../../../config";
 import { useNavigate, useParams } from "react-router-dom";
-import Card from "../atoms/card";
-import CardLoading from "../atoms/card loading";
-import { apiKey } from "../../config";
+import Card from "../../atoms/card";
+import CardLoading from "../../atoms/card loading";
 
-export default function GenreCard() {
+export default function Result() {
     const [dataMovie, setDataMovie] = useState([]);
     const [dataTv, setDataTv] = useState([]);
-    const [dataGenreListMovie, setDataGenreListMovie] = useState("");
-    const [dataGenreListTv, setDataGenreListTv] = useState("");
     const [totalPageMovie, setTotalPageMovie] = useState(0);
     const [totalPageTv, setTotalPageTv] = useState(0);
-    const [loading, setloading] = useState(true);
+    const [loading, setloading] = useState(false);
     let params = useParams();
     let navigate = useNavigate();
 
     useEffect(() => {
-        const fetchDataMovie = async (id) => {
+        const fetchDataMovie = async () => {
             setloading(true);
             try {
                 fetch(
-                    `https://api.themoviedb.org/3/discover/movie?api_key=${apiKey}&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=${params.num}&with_genres=${id}`
+                    `https://api.themoviedb.org/3/search/movie?api_key=${apiKey}&language=en-US&query=${params.keyword}&page=${params.num}&include_adult=false`
                 )
                     .then((response) => response.json())
                     .then((results) => {
                         setDataMovie(results.results);
                         setTotalPageMovie(results.total_pages);
-                        console.log(results);
                         setloading(false);
                     });
             } catch (e) {
@@ -34,17 +31,16 @@ export default function GenreCard() {
             }
         };
 
-        const fetchDataTv = async (id) => {
+        const fetchDataTv = async () => {
             setloading(true);
             try {
                 fetch(
-                    `https://api.themoviedb.org/3/discover/tv?api_key=${apiKey}&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=${params.num}&with_genres=${id}`
+                    `https://api.themoviedb.org/3/search/tv?api_key=${apiKey}&language=en-US&query=${params.keyword}&page=${params.num}&include_adult=false`
                 )
                     .then((response) => response.json())
                     .then((results) => {
                         setDataTv(results.results);
                         setTotalPageTv(results.total_pages);
-                        console.log(results);
                         setloading(false);
                     })
                     .catch(() => {
@@ -54,65 +50,17 @@ export default function GenreCard() {
                 setloading(true);
             }
         };
-
-        const fetchDataGenreListMovie = async () => {
-            setloading(true);
-            try {
-                fetch(
-                    `https://api.themoviedb.org/3/genre/movie/list?api_key=${apiKey}&language=en-US`
-                )
-                    .then((response) => response.json())
-                    .then((results) => {
-                        for (let i = 0; i < results.genres.length; i++) {
-                            if (results.genres[i].id.toString() === params.id) {
-                                setDataGenreListMovie(results.genres[i].name);
-                                fetchDataMovie(results.genres[i].id);
-                            }
-                            setloading(false);
-                        }
-                    });
-            } catch (e) {
-                setloading(true);
-            }
-        };
-
-        const fetchDataGenreListTv = async () => {
-            setloading(true);
-            try {
-                fetch(
-                    `https://api.themoviedb.org/3/genre/tv/list?api_key=${apiKey}&language=en-US`
-                )
-                    .then((response) => response.json())
-                    .then((results) => {
-                        for (let i = 0; i < results.genres.length; i++) {
-                            if (results.genres[i].id.toString() === params.id) {
-                                setDataGenreListTv(results.genres[i].name);
-                                fetchDataTv(results.genres[i].id);
-                            }
-                            setloading(false);
-                        }
-                    });
-            } catch (e) {
-                setloading(true);
-            }
-        };
         window.scrollTo({
             top: 0,
             behavior: "smooth",
         });
-        fetchDataGenreListMovie();
-        fetchDataGenreListTv();
-        console.log(parseInt(params.num));
-    }, [params.id, params.num]);
+        fetchDataMovie();
+        fetchDataTv();
+    }, [params.keyword, params.num]);
 
     return (
         <div className="min-h-screen px-5 py-6 text-white sm:py-14 md:px-10 lg:px-14 md:py-8">
-            <h1 className="mb-3 text-2xl font-semibold text-center text-white lg:px-1 md:text-5xl sm:mb-5 md:mb-8">
-                Popular Movie & Tv with genre{" "}
-                {dataGenreListMovie !== ""
-                    ? dataGenreListMovie
-                    : dataGenreListTv}
-            </h1>
+            <h1 className="text-4xl font-semibold mb-7">Results</h1>
             {loading ? (
                 <div className="grid grid-cols-3 gap-6 sm:grid-cols-3 lg:grid-cols-5 xl:grid-cols-6 justify-items-center sm:gap-10 md:gap-12 lg:gap-14 xl:gap-y-9">
                     <CardLoading></CardLoading>
@@ -122,10 +70,8 @@ export default function GenreCard() {
                     <CardLoading></CardLoading>
                     <CardLoading></CardLoading>
                 </div>
-            ) : dataGenreListMovie.length === 0 &&
-              dataGenreListTv.length === 0 &&
-              loading === false ? (
-                <h1 className="text-3xl font-normal text-white">Not Found</h1>
+            ) : dataMovie.length === 0 && dataTv.length === 0 ? (
+                <h1 className="text-white text-3xl font-normal">Not Found</h1>
             ) : (
                 <div className="grid grid-cols-3 gap-6 sm:grid-cols-3 lg:grid-cols-5 xl:grid-cols-6 justify-items-center sm:gap-10 md:gap-12 lg:gap-14 xl:gap-y-9">
                     {dataMovie.map((cardData) => (
@@ -170,7 +116,7 @@ export default function GenreCard() {
                 <button
                     onClick={() =>
                         navigate(
-                            `/genre/${params.id}/page/${
+                            `/search/${params.keyword}/page/${
                                 parseInt(params.num) > 1
                                     ? parseInt(params.num) - 1
                                     : params.num
@@ -192,7 +138,7 @@ export default function GenreCard() {
                 <button
                     onClick={() =>
                         navigate(
-                            `/genre/${params.id}/page/${
+                            `/search/${params.keyword}/page/${
                                 parseInt(params.num) <
                                 (totalPageMovie > totalPageTv
                                     ? totalPageMovie > 500

@@ -1,13 +1,13 @@
 import React from "react";
 import Navbar from "../../Components/navbar";
-import GenreCard from "../../Components/genre card";
 import Footer from "../../Components/footer";
+import UpcomingCard from "../../Components/card list/upcoming card";
 
-export default function Genre() {
+export default function Upcoming() {
     return (
         <div className="min-h-screen bg-black -z-50 font-poppins">
             <Navbar></Navbar>
-            <GenreCard></GenreCard>
+            <UpcomingCard></UpcomingCard>
             <Footer></Footer>
         </div>
     );

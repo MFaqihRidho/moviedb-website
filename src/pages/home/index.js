@@ -2,7 +2,7 @@ import React from "react";
 import Navbar from "../../Components/navbar";
 import Hero from "../../Components/hero";
 import Footer from "../../Components/footer";
-import TrendingMovies from "../../Components/Trending Card";
+import TrendingMovies from "../../Components/card list/Trending Card";
 
 export default function Home() {
     return (
