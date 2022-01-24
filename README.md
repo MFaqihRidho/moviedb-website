@@ -30,7 +30,7 @@
 <br />
 <div align="center">
   <a href="">
-    [![moviedb-icon.png](https://i.postimg.cc/VLngNHzB/moviedb-icon.png)](https://postimg.cc/8jkMK4Jj)
+    <img src="https://i.postimg.cc/VLngNHzB/moviedb-icon.png"/>
   </a>
 
   <h3 align="center">Best-README-Template</h3>
