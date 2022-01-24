@@ -35,7 +35,7 @@
     <br />
     <a href="https://movie-finder-website.vercel.app">View Demo</a>
     ·
-    <a href="https://github.com/othneildrew/Best-README-Template/issues">Report Bug</a>
+    <a href="https://github.com/MFaqihRidho/moviedb-website/issues">Report Bug</a>
     ·
     <a href="https://github.com/othneildrew/Best-README-Template/issues">Request Feature</a>
   </p>
