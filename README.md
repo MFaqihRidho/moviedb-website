@@ -24,7 +24,7 @@
 <br />
 <div align="center">
   <a href="">
-    <img width="40" src="https://i.postimg.cc/VLngNHzB/moviedb-icon.png"/>
+    <img width="100" src="https://i.postimg.cc/VLngNHzB/moviedb-icon.png"/>
   </a>
 
   <h3 align="center">Best-README-Template</h3>
