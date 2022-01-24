@@ -29,8 +29,8 @@
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-  <a href="[![moviedb-icon.png](https://i.postimg.cc/VLngNHzB/moviedb-icon.png)](https://postimg.cc/8jkMK4Jj)">
-    <img src="images/logo.png" alt="Logo" width="80" height="80">
+  <a href="">
+    [![moviedb-icon.png](https://i.postimg.cc/VLngNHzB/moviedb-icon.png)](https://postimg.cc/8jkMK4Jj)
   </a>
 
   <h3 align="center">Best-README-Template</h3>
