@@ -13,9 +13,8 @@ export default function MobileNav() {
         setShowDropDown(!showDropDown);
     };
 
-    const trending = () => {
-        navigate("/#trending");
-        document.getElementById("trending").scrollIntoView();
+    const upcoming = () => {
+        navigate("/upcoming/page/1");
         setShowDropDown(!showDropDown);
     };
 
@@ -80,13 +79,13 @@ export default function MobileNav() {
             {showDropDown ? (
                 <div className="fixed right-11 flex flex-col opacity-100 transition-all duration-300 items-center bg-three rounded px-1.5 py-3 gap-2 z-10">
                     <NavLink onClick={home}>Home</NavLink>
-                    <NavLink onClick={trending}>Trending</NavLink>
+                    <NavLink onClick={upcoming}>Upcoming</NavLink>
                     <NavLink onClick={genre}>Genre</NavLink>
                 </div>
             ) : (
                 <div className="fixed invisible right-11 flex flex-col opacity-0 transition-all duration-300 items-center bg-three rounded px-1.5 py-3 gap-2 z-10">
                     <p className="px-2 text-2xl font-normal">Home</p>
-                    <p className="px-2 text-2xl font-normal">Trending</p>
+                    <p className="px-2 text-2xl font-normal">Upcoming</p>
                     <p className="px-2 text-2xl font-normal">Genre</p>
                 </div>
             )}
