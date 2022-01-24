@@ -29,7 +29,7 @@ export default function Card(props) {
                 >
                     {props.title}
                 </h5>
-                <div className="flex">
+                <div id={props.id} className="flex">
                     <p
                         id={props.id}
                         className={`px-1 mr-1 text-xs text-white ${
