@@ -24,18 +24,16 @@
 <br />
 <div align="center">
   <a href="">
-    <img width="100" src="https://i.postimg.cc/VLngNHzB/moviedb-icon.png"/>
+    <img width="130" src="https://i.postimg.cc/VLngNHzB/moviedb-icon.png"/>
   </a>
 
   <h3 align="center">Best-README-Template</h3>
 
   <p align="center">
-    An awesome README template to jumpstart your projects!
-    <br />
-    <a href="https://github.com/othneildrew/Best-README-Template"><strong>Explore the docs »</strong></a>
+    An awesome MovieDB webiste ursing TMDB
     <br />
     <br />
-    <a href="https://github.com/othneildrew/Best-README-Template">View Demo</a>
+    <a href="https://movie-finder-website.vercel.app">View Demo</a>
     ·
     <a href="https://github.com/othneildrew/Best-README-Template/issues">Report Bug</a>
     ·
