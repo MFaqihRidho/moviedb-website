@@ -1,70 +1,172 @@
-# Getting Started with Create React App
+<div id="top"></div>
+<!--
+*** Thanks for checking out the Best-README-Template. If you have a suggestion
+*** that would make this better, please fork the repo and create a pull request
+*** or simply open an issue with the tag "enhancement".
+*** Don't forget to give the project a star!
+*** Thanks again! Now go create something AMAZING! :D
+-->
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
 
-In the project directory, you can run:
+<!-- PROJECT SHIELDS -->
+<!--
+*** I'm using markdown "reference style" links for readability.
+*** Reference links are enclosed in brackets [ ] instead of parentheses ( ).
+*** See the bottom of this document for the declaration of the reference variables
+*** for contributors-url, forks-url, etc. This is an optional, concise syntax you may use.
+*** https://www.markdownguide.org/basic-syntax/#reference-style-links
+-->
 
-### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+<!-- PROJECT LOGO -->
+<br />
+<div align="center">
+  <a href="">
+    <img width="130" src="https://i.postimg.cc/VLngNHzB/moviedb-icon.png"/>
+  </a>
+  <h3 align="center">MovieDB Website</h3>
 
-### `npm test`
+  <p align="center">
+    An awesome MovieDB webiste ursing TMDB
+    <br />
+    <a href="https://movie-finder-website.vercel.app">View Demo</a>
+    ·
+    <a href="https://github.com/MFaqihRidho/moviedb-website/issues">Report Bug</a>
+    ·
+    <a href="https://github.com/MFaqihRidho/moviedb-website/issues">Request Feature</a>
+  </p>
+</div>
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+<!-- TABLE OF CONTENTS -->
+<details>
+  <summary>Table of Contents</summary>
+  <ol>
+    <li>
+      <a href="#about-the-project">About The Project</a>
+      <ul>
+        <li><a href="#built-with">Built With</a></li>
+      </ul>
+    </li>
+    <li>
+      <a href="#getting-started">Getting Started</a>
+      <ul>
+        <li><a href="#prerequisites">Prerequisites</a></li>
+        <li><a href="#installation">Installation</a></li>
+      </ul>
+    </li>
+    <li><a href="#contributing">Contributing</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ol>
+</details>
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
+<!-- ABOUT THE PROJECT -->
+## About The Project
+### On Desktop
+[![movideb.png](https://i.postimg.cc/LX5v69sn/movideb.png)](https://postimg.cc/xJrL6SM2)
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+[![Opera-Snapshot-2022-01-25-063853-movie-finder-website-vercel-app.png](https://i.postimg.cc/zGYdSYxc/Opera-Snapshot-2022-01-25-063853-movie-finder-website-vercel-app.png)](https://postimg.cc/bsLHpWcx)
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+[![Opera-Snapshot-2022-01-25-064200-movie-finder-website-vercel-app.png](https://i.postimg.cc/3J2MHB6z/Opera-Snapshot-2022-01-25-064200-movie-finder-website-vercel-app.png)](https://postimg.cc/4m426zX1)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### On Mobile
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+[![Screenshot-20220125-064406.png](https://i.postimg.cc/vZGKwd56/Screenshot-20220125-064406.png)](https://postimg.cc/VdHgXpGY)
 
-## Learn More
+[![Screenshot-20220125-064418.png](https://i.postimg.cc/9Mw8YXHs/Screenshot-20220125-064418.png)](https://postimg.cc/N9YkgcMx)
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+There are many great Movie on this website so you can find any movie to watch the trailer or just want to see the rating
 
-### Code Splitting
+Feature's:
+* Find your movie with any genre
+* Find your movie with any keyword
+* Play trailer or teaser on available movie
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+Of course, there are still many shortcomings, so just enjoy it
+e!
 
-### Analyzing the Bundle Size
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
 
-### Making a Progressive Web App
+<p align="right">(<a href="#top">back to top</a>)</p>
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
 
-### Advanced Configuration
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+### Built With
 
-### Deployment
+This Movie using react js as front end framework,TMDB as Database,and tailwind as the style.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+* [React.js](https://reactjs.org/)
+* [TMDB](https://www.themoviedb.org)
+* [Tailwindcss](https://tailwindcss.com)
 
-### `npm run build` fails to minify
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+<p align="right">(<a href="#top">back to top</a>)</p>
+
+
+
+<!-- GETTING STARTED -->
+## Getting Started
+
+This is an example of how you may give instructions on setting up your project locally.
+To get a local copy up and running follow these simple example steps.
+
+### Prerequisites
+
+This is an example of how to list things you need to use the software and how to install them.
+* npm
+  ```sh
+  npm install npm@latest -g
+  ```
+
+### Installation
+
+_Below is an example of how you can instruct your audience on installing and setting up your app. This template doesn't rely on any external dependencies or services._
+
+1. Get a free API Key at [Sign up in TMDB](https://www.themoviedb.org/signup)
+2. Clone the repo
+   ```sh
+   git clone https://github.com/MFaqihRidho/moviedb-website.git
+   ```
+3. Install NPM packages
+   ```sh
+   npm install
+   ```
+4. Enter your API in `config.js`
+   ```js
+   const API_KEY = 'ENTER YOUR API';
+   ```
+
+<p align="right">(<a href="#top">back to top</a>)</p>
+
+
+<!-- CONTRIBUTING -->
+## Contributing
+
+Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
+
+If you have a suggestion that would make this better, please fork the repo and create a pull request. You can also simply open an issue with the tag "enhancement".
+Don't forget to give the project a star! Thanks again!
+
+1. Fork the Project
+2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the Branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
+<p align="right">(<a href="#top">back to top</a>)</p>
+
+
+<!-- CONTACT -->
+## Contact
+
+M.Faqih Ridho - [@mfaqihridho](https://www.instagram.com/mfaqihridho/) - mfaqihridhoo@gmail.com
+
+Project Link: [https://github.com/MFaqihRidho/moviedb-website](https://github.com/MFaqihRidho/moviedb-website)
+
+<p align="right">(<a href="#top">back to top</a>)</p>
