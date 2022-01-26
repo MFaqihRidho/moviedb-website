@@ -64,10 +64,9 @@ export default function GenreCard() {
                         for (let i = 0; i < results.genres.length; i++) {
                             if (results.genres[i].id.toString() === params.id) {
                                 setDataGenreListMovie(results.genres[i].name);
-                                fetchDataMovie(results.genres[i].id);
                             }
-                            setloading(false);
                         }
+                        fetchDataMovie(params.id);
                     });
             } catch (e) {
                 setloading(true);
@@ -85,10 +84,9 @@ export default function GenreCard() {
                         for (let i = 0; i < results.genres.length; i++) {
                             if (results.genres[i].id.toString() === params.id) {
                                 setDataGenreListTv(results.genres[i].name);
-                                fetchDataTv(results.genres[i].id);
                             }
-                            setloading(false);
                         }
+                        fetchDataTv(params.id);
                     });
             } catch (e) {
                 setloading(true);
@@ -119,8 +117,8 @@ export default function GenreCard() {
                     <CardLoading></CardLoading>
                     <CardLoading></CardLoading>
                 </div>
-            ) : dataGenreListMovie.length === 0 &&
-              dataGenreListTv.length === 0 &&
+            ) : dataTv.length === 0 &&
+              dataMovie.length === 0 &&
               loading === false ? (
                 <h1 className="text-3xl font-normal text-white">Not Found</h1>
             ) : (
